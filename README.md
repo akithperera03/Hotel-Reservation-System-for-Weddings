@@ -1,3 +1,4 @@
+<<<<<<< HEAD
                                                 Welcome to Aurora Bliss!!!
 
 Are you looking for an effective hotel reservation system that can make your event a phenomenon? Look no further. We are one of the best hotel reservation system providers, delivering excellent service for you. 
@@ -10,3 +11,7 @@ At Aurora Bliss, we fulfill all your desires. Our services are not only friendly
 
 Don’t miss the opportunity to create lasting memories with us. We’re excited to make your dreams come true. Hurry and book with Aurora Bliss today; we are here to turn your special day into an alluring experience.
 
+=======
+# Hotel-Reservation-System-for-Weddings
+Internet &amp; Web Technologies Assignment
+>>>>>>> 2ca1bd100c920db317d37b885ab473d718641274
