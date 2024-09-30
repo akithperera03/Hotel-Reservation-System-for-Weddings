@@ -1,11 +1,12 @@
-// Toggle password visibility
-document.addEventListener("DOMContentLoaded", function() {
-    const togglePassword = document.querySelector('.toggle-password');
-    const passwordField = document.querySelector('#password');
-  
-    togglePassword.addEventListener('click', function() {
-      const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
-      passwordField.setAttribute('type', type);
+
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', function () {
+        // Toggle the type attribute using get/setAttribute
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+
+        // Toggle the eye icon (optional)
+        this.textContent = this.textContent === '👁' ? '🙈' : '👁';
     });
-  });
-  

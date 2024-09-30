@@ -232,3 +232,17 @@ a .booking-btn:hover {
     margin-top: 10px;
     color: #333;
 }
+footer .copyright {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+footer .copyright a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer .copyright a:hover {
+    text-decoration: underline;
+}

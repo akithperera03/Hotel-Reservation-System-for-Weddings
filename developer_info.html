@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCrafters - Team Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color:  #005f99;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        h2 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        .team-info {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px;
+        }
+        .member {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+            padding: 15px;
+            width: 250px;
+            transition: transform 0.3s;
+        }
+        .member:hover {
+            transform: scale(1.05);
+        }
+        .member img {
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+        }
+        .member h3 {
+            margin: 10px 0 5px 0;
+        }
+        .member p {
+            margin: 5px 0;
+        }
+        .github-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #0366d6;
+            text-decoration: none;
+        }
+        .github-link:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #333;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to CodeCrafters</h1>
+    <h2>Group ID: MLB_02.02_05</h2>
+</header>
+
+<div class="team-info" id="about">
+    <h2>About Our Team</h2>
+    <p>We are a group of passionate web developers dedicated to crafting high-quality web applications. Our goal is to create user-friendly and innovative solutions that make a difference.</p>
+</div>
+
+<div class="members" id="members">
+    <h2>Meet Our Team Members</h2>
+    <div class="member">
+        <img src="member1.jpg" alt="Member 1">
+        <h3>Akith Perera</h3>
+        <p>University ID: IT23551152</p>
+        <a class="github-link" href="https://github.com/akithperera03/" target="_blank">GitHub Profile</a>
+    </div>
+    <div class="member">
+        <img src="member2.jpg" alt="Member 2">
+        <h3>Kalana Biyanwila</h3>
+        <p>University ID: IT23609280 </p>
+        <a class="github-link" href="https://github.com/kalanaBiyanwila99" target="_blank">GitHub Profile</a>
+    </div>
+    <div class="member">
+        <img src="member3.jpg" alt="Member 3">
+        <h3>Sanugi De Silva</h3>
+        <p>University ID: IT23562042</p>
+        <a class="github-link" href="https://github.com/sanugi02" target="_blank">GitHub Profile</a>
+    </div>
+    <div class="member">
+        <img src="images/developer/tharaka.jpg" alt="Member 4">
+        <h3>Sanduni Tharaka</h3>
+        <p>University ID: IT23570580</p>
+        <a class="github-link" href="https://github.com/THARAKAWS" target="_blank">GitHub Profile</a>
+    </div>
+    <div class="member">
+        <img src="member5.jpg" alt="Member 5">
+        <h3>Aloka Samarasinghe</h3>
+        <p>University ID: IT23585676</p>
+        <a class="github-link" href="https://github.com/SamarasingheAVAV" target="_blank">GitHub Profile</a>
+    </div>
+</div>
+
+<footer id="contact">
+    <p>&copy; 2024 CodeCrafters. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
