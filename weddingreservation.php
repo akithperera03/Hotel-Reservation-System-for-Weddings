@@ -6,7 +6,7 @@
     <title>Aurora Bliss</title>
     <link rel="stylesheet" href="styles/weddingreservation.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <link rel="icon" href="images/icon/icon.ico" type="image/x-icon">
 </head>
 <body>
 
@@ -52,10 +52,10 @@
                 <label for="venue">Venue:</label>
                 <select id="venue" name="venue" required placeholder="venue">
                 <option value="" disabled selected>Select Venue</option>
-                <option value="Grand Hall">Grand Hall</option>
-                <option value="Ocean View">Ocean View</option>
-                <option value="Garden Plaza">Garden Plaza</option>
-                <option value="Mountain Peak">Mountain Peak</option>
+                <option value="Beachfront Paradise">Beachfront Paradise</option>
+                <option value="Garden Oasis">Garden Oasis</option>
+                <option value="Luxury Ballroom">Luxury Ballroom</option>
+                <option value="Rooftop Terrace">Rooftop Terrace</option>
                 </select>
 
                 <label for="wedding-date">Date:</label>

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/stylesheet.css">
     <link rel="stylesheet" href="styles/userAcc.css">
     <script src="js/userAcc.js"></script>
+    <link rel="icon" href="images/icon/icon.ico" type="image/x-icon">
 </head>
 <body>
 
@@ -73,20 +74,6 @@
             <button>Confirm</button>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <footer>
     <div class="container">
         <div class="logo"> 
@@ -114,6 +101,5 @@
         </div>
     </div>
 </footer>
-
 </body>
 </html>

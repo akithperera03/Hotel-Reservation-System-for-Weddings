@@ -69,6 +69,24 @@ a .booking-btn:hover {
 .user a:hover {
     color: #fff;
 }
+
+.hero {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 50px;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
 footer {
     background-color: #333;
     color: white;

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aurora Bliss</title>
     <link rel="stylesheet" href="styles/stylesheet.css">
+    <link rel="icon" href="images/icon/icon.ico" type="image/x-icon">
 </head>
 <body>
 
@@ -74,23 +75,23 @@
                 <h2>Most reviewed venues...</h2>
                 <div class="venue-list">
                     <div class="venue">
-                        <img src="images/venues/venue1.jpeg" alt="Grand Hall Venue">
-                        <h3>Grand Hall</h3>
+                        <img src="images/locations/beachFront.jpg" alt="Beachfront Paradise">
+                        <h3>Beachfront Paradise</h3>
                         <p>Rating: ⭐⭐⭐⭐ 4.5</p>
                     </div>
                     <div class="venue">
-                        <img src="images/venues/venue2.jpeg" alt="Ocean View Resort Venue">
-                        <h3>Ocean View Resort</h3>
+                        <img src="images/locations/GardenOasis.jpg" alt="Garden Oasis">
+                        <h3>Garden Oasis</h3>
                         <p>Rating: ⭐⭐⭐⭐⭐ 4.8</p>
                     </div>
                     <div class="venue">
-                        <img src="images/venues/venue3.jpeg" alt="Garden Plaza Venue">
-                        <h3>Garden Plaza</h3>
+                        <img src="images/locations/LuxuryBallroom.jpg" alt="Luxury Ballroom">
+                        <h3>Luxury Ballroom</h3>
                         <p>Rating: ⭐⭐⭐⭐ 4.4</p>
                     </div>
                     <div class="venue">
-                        <img src="images/venues/venue4.jpeg" alt="Mountain Peak Venue">
-                        <h3>Mountain Peak</h3>
+                        <img src="images/locations/rooftop.jpg" alt="Rooftop Terrace">
+                        <h3>Rooftop Terrace</h3>
                         <p>Rating: ⭐⭐⭐⭐⭐ 4.9</p>
                     </div>
                 </div>

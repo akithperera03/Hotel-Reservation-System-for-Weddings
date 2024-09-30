@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/header_footer.css">
     <link rel="stylesheet" href="styles/careers.css">
     <script src="js/index.js" defer></script>
+    <link rel="icon" href="images/icon/icon.ico" type="image/x-icon">
 </head>
 <body>
 

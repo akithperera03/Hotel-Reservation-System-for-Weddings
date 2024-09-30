@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/venues.css">
     <link rel="stylesheet" href="styles/header_footer.css">
     <script src="js/venues.js" defer></script>
+    <link rel="icon" href="images/icon/icon.ico" type="image/x-icon">
 </head>
 <body>
     <header>

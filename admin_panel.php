@@ -6,6 +6,7 @@
     <title>Aurora Bliss</title>
     <link rel="stylesheet" href="styles/admin.css">
     <link rel ="stylesheet" href ="styles/stylesheet.css">
+    <link rel="icon" href="images/icon/icon.ico" type="image/x-icon">
 </head>
 <body>
 

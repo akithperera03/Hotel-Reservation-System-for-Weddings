@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aurora Bliss</title>
     <link rel="stylesheet" href="styles/admin_login.css">
+    <link rel="icon" href="images/icon/icon.ico" type="image/x-icon">
 
 </head>
 <header>

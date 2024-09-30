@@ -49,6 +49,34 @@ nav ul li a {
 nav ul li a:hover {
     color: #ddd;
 }
+.hero {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 1px;
+}
+
+a .booking-btn {
+    background-color: #007bff; /* Blue color */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a .booking-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
 
 .user {
     display: flex;
@@ -269,78 +297,33 @@ h2 {
 footer {
     background-color: #333;
     color: white;
-    padding: 5px 0;
-    font-size: 0.9em;
-}
-
-footer .container {
+    padding: 10px ;
+  }
+  
+  footer .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-footer .social a {
-    margin-right: 10px;
-    text-align: center;
-}
-
-footer .social img {
+  }
+  
+  footer .social img {
     width: 25px;
     height: 25px;
-    margin-left: 15px;
-}
-
-footer .bottomlinks a {
-    color: yellow;
-}
-
-footer .bottomlinks p {
+    margin-right: 10px;
+  }
+  
+  footer .bottomlinks {
     text-align: center;
-    font-size: 1em; 
-}
-
-.subscribe {
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 1px;
-    background: #333;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.subscribe h1 {
-    margin-bottom: 20px;
-}
-
-input[type="email"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.subscribe button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007BFF;
+  }
+  
+  footer .bottomlinks a {
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.subscribe button:hover {
-    background-color: #0056b3;
-}
-
-#responseMessage {
-    text-align: center;
-    margin-top: 10px;
-    color: #333;
-}
-footer .copyright {
+  }
+  
+  footer .bottomlinks a:hover {
+    text-decoration: underline;
+  }
+  footer .copyright {
     margin-top: 20px;
     font-size: 0.9em;
     color: #aaa;
@@ -354,3 +337,4 @@ footer .copyright a {
 footer .copyright a:hover {
     text-decoration: underline;
 }
+  

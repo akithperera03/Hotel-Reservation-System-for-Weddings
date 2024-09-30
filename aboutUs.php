@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Aurora Bliss</title>
     <link rel="stylesheet" href="styles/aboutus.css">
-    <link rel="stylesheet" href="styles/header_footer.css">
+    <link rel="stylesheet" href="styles/stylesheet.css">
     <script src="js/aboutus.js" defer></script>
+    <link rel="icon" href="images/icon/icon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -33,35 +34,35 @@
             </div>
         </div>
     </header>
-    
-    <div class="about-section">
-        <h1>About Aurora Bliss</h1>
-        <p>Welcome to <strong>Aurora Bliss</strong>, a premier luxury hotel specializing in creating memorable weddings and events. Established in 2010, Aurora Bliss has become a symbol of excellence in hospitality, offering world-class services in a serene, romantic setting. From venue reservations to tailored wedding services, we are committed to making every event perfect.</p>
-    </div>
-
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>About Aurora Bliss</h1>
+                <p>Welcome to <strong>Aurora Bliss</strong>, a premier luxury hotel specializing in creating memorable weddings and events. Established in 2010, Aurora Bliss has become a symbol of excellence in hospitality, offering world-class services in a serene, romantic setting. From venue reservations to tailored wedding services, we are committed to making every event perfect.</p>
+            </div>
+        </section>
     <div class="corporate-section">
         <h2>Board of Management</h2>
         <p>Our leadership team ensures that Aurora Bliss remains a top destination for weddings and special events:</p>
         <div class="board-members">
             <div class="board-member">
-                <img src="images/john-matthews.jpg" alt="John Matthews - CEO" class="member-photo">
+                <img src="images/managment/Kasun Perera.jpg" alt="Kasun Perera - CEO" class="member-photo">
                 <div class="member-info">
-                    <h3>John Matthews</h3>
-                    <p><strong>CEO:</strong> With over 20 years in hospitality management, John leads our vision of world-class service and guest satisfaction.</p>
+                    <h3>Kasun Perera</h3>
+                    <p><strong>CEO:</strong> With over 20 years in hospitality management, Kasun leads our vision of world-class service and guest satisfaction.</p>
                 </div>
             </div>
             <div class="board-member">
-                <img src="images/linda-thompson.jpg" alt="Linda Thompson - CFO" class="member-photo">
-                <div class="member-info">
-                    <h3>Linda Thompson</h3>
-                    <p><strong>CFO:</strong> Linda oversees our financial strategies, ensuring the growth and sustainability of our brand.</p>
-                </div>
+                <img src="images/managment/Nadeeka Wijesinghe.jpg" alt="Nadeeka Wijesinghe - CFO" class="member-photo">
+                <o class="member-info">
+                    <h3>Nadeeka Wijesinghe</h3>
+                    <p><strong>CFO:</strong> Nadeeka oversees our financial strategies, ensuring the growth and sustainability of our brand.</p>
             </div>
-            <div class="board-member">
-                <img src="images/michael-harris.jpg" alt="Michael Harris - COO" class="member-photo">
+                <div class="board-member">
+                <img src="images/managment/Amila Fernando.jpg" alt="Amila Fernando - COO" class="member-photo">
                 <div class="member-info">
-                    <h3>Michael Harris</h3>
-                    <p><strong>COO:</strong> Michael manages day-to-day operations, focusing on the seamless execution of events and services.</p>
+                    <h3>Amila Fernando</h3>
+                    <p><strong>COO:</strong> Amila Fernando day-to-day operations, focusing on the seamless execution of events and services.</p>
                 </div>
             </div>
         </div>
@@ -83,7 +84,7 @@
         <button class="learn-more-btn" onclick="showMore()">Learn More About Our History</button>
         <p id="more-info" style="display: none;">Founded by hospitality enthusiasts, Aurora Bliss was built on the belief that every wedding should be unique and unforgettable. Over the years, we've hosted over 1,000 weddings, gaining a reputation for unparalleled service and attention to detail. Our mission is to continue offering personalized, luxurious experiences that leave a lasting impression on our guests.</p>
     </div>
-
+</main>
     <footer>
     <div class="container">
         <div class="logo"> 
