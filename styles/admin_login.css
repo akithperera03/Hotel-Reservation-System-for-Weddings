@@ -205,3 +205,18 @@ footer ul li a:hover {
         margin-top: 10px;
     }
 }
+
+footer .copyright {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+footer .copyright a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer .copyright a:hover {
+    text-decoration: underline;
+}

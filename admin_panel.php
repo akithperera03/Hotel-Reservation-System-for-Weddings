@@ -222,6 +222,10 @@
                 </p>
             </div>
         </div>
+        <div class="copyright">
+            <p>&copy; 2024 Aurora Bliss. All Rights Reserved.</p>
+            <p>Website developed by <a href="developer_info.html">CodeCrafters</a></p>
+        </div>
     </div>
 </footer>
 

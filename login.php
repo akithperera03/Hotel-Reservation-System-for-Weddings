@@ -47,9 +47,13 @@
                     </div>
                     <div class="input-group">
                         <label for="password">Password <span class="required">*</span></label>
-                        <input type="password" id="password" placeholder="Password" required>
-                        <span class="toggle-password">👁</span>
-                    </div>
+                        <div class="password-container"> 
+                            <input type="password" id="password" placeholder="Password" required>
+                            <span class="toggle-password" id="togglePassword">
+                            <i class="fa fa-eye"></i> 
+                            </span>
+                        </div>
+                        </div>
                     <div class="options">
                         <label><input type="checkbox"> Remember Me</label>
                         <a href="#" class="forgot-password">Forgot my password</a>
@@ -84,15 +88,7 @@
                 <a href="https://www.x.com"><img src="images/socialmedia/x.png" alt="X"></a>
                 <a href="https://www.linkedin.com"><img src="images/socialmedia/linkedin.png" alt="LinkedIn"></a>
             </div>
-
-            <div class="subscribe">
-                <h3>Subscribe to Our Newsletter</h3>
-                <form id="subscribeForm" method="POST" action="">
-                    <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-            <div class="legal">
+                        <div class="legal">
                 <div class="bottomlinks">
                     <p> 
                         <a href="termsAndConditions.php"> Terms and Conditions </a> | 
@@ -102,6 +98,10 @@
                     </p>
                 </div>
             </div>
+            <div class="copyright">
+            <p>&copy; 2024 Aurora Bliss. All Rights Reserved.</p>
+            <p>Website developed by <a href="developer_info.html">CodeCrafters</a></p>
+        </div>
         </div>
     </footer>
 
