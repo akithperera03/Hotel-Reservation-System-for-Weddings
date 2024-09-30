@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/header_footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="js/login.js" defer></script>
+    <link rel="icon" href="images/icon/icon.ico" type="image/x-icon">
 </head>
 <body>
 
@@ -64,7 +65,7 @@
                          <i class="fab fa-google"></i> Sign in with Google
                     </button>                 
                     <div class="legal-links"> 
-                        <a href="terms.php">Terms & Conditions</a> | <a href="#">Privacy</a>
+                        <a href="termsAndConditions.php">Terms & Conditions</a> | <a href="privacyPolicy.php">Privacy</a>
                     </div>
                 </form>
             </div>

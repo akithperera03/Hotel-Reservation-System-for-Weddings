@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles/bookingoverview.css">
     <script defer src="js/bookingoverview.js"></script>
+    <link rel="icon" href="images/icon/icon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -23,12 +24,20 @@
                     <li><a href="contactUs.php">CONTACT US</a></li>
                 </ul>
             </nav>
+            <a href="weddingreservation.php">
+                <button type="button" class="booking-btn">Booking Request</button>
+              </a>
             <div class="user">
                 <span>Hello!</span>
                 <a href="login.php">LogOut</a>
             </div>
         </div>
     </header>
+    <main>
+    <section class="hero">
+                <h1>Booking Overview</h1>
+             
+    </section>
     <div class="dashboard">
         <div class="profile-section">
             
@@ -47,7 +56,7 @@
             </div>
         </div>
         <div class="bookings-section">
-            <h2>Booking Overview <span id="dateTime"></span></h2>
+            <h2> <span id="dateTime"></span></h2>
             <hr>
             <table>
                 <thead>
@@ -178,7 +187,7 @@
             </div>
         </section>
     </div>
-    
+    </main>
     <footer>
     <div class="container">
         <div class="logo"> 

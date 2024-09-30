@@ -77,7 +77,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } while (false);
 }
 ?>
-
 <!DOCTYPE html> 
 <html lang="en">
 <head>
@@ -85,6 +84,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aurora Bliss</title>
     <link rel="stylesheet" href="styles/addguest.css">
+    <link rel="stylesheet" href="styles/stylesheet.css">
+    <link rel="icon" href="images/icon/icon.ico" type="image/x-icon">
 
 </head>
 <body>
@@ -156,26 +157,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
 <br><br>
-    <footer>
-        <div class="container">
-            <div class="logo"> 
-                <a href="index.php"><img src="images/logo_1.jpg" id="logoimage"></a>
-            </div> 
-            <div class="social">
+<footer>
+    <div class="container">
+        <div class="logo"> 
+            <a href="index.php"><img src="images/logo_1.jpg" id="logoimage" alt="Aurora Bliss Logo"></a>
+        </div> 
+        <div class="social">
             <a href="https://www.instagram.com"><img src="images/socialmedia/instagram.jpeg" alt="Instagram"></a>
-                <a href="https://www.facebook.com"><img src="images/socialmedia/facebook.png" alt="Facebook"></a>
-                <a href="https://www.x.com"><img src="images/socialmedia/x.png" alt="X"></a>
-                <a href="https://www.linkedin.com"><img src="images/socialmedia/linkedin.png" alt="LinkedIn"></a>
-            </div>
-    
-            <div class="subscribe">
-        <h3>Subscribe to Our Newsletter</h3>
-        <form id="subscribeForm" method="POST" action="">
-            <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
-            <button type="submit">Submit</button>
-        </form>
-      
-    </div>
+            <a href="https://www.facebook.com"><img src="images/socialmedia/facebook.png" alt="Facebook"></a>
+            <a href="https://www.x.com"><img src="images/socialmedia/x.png" alt="X"></a>
+            <a href="https://www.linkedin.com"><img src="images/socialmedia/linkedin.png" alt="LinkedIn"></a>
+        </div>
         <div class="legal">
             <div class="bottomlinks">
                 <p> 
@@ -186,8 +178,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </p>
             </div>
         </div>
-    </footer>
-    
-    </body>
-    </html>
-    
+        <div class="copyright">
+            <p>&copy; 2024 Aurora Bliss. All Rights Reserved.</p>
+            <p>Website developed by <a href="developer_info.html">CodeCrafters</a></p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+

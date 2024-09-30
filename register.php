@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/stylesheet.css">
     <link rel="stylesheet" href="styles/registering.css">
     <script src="js/registering.js"></script>
+    <link rel="icon" href="images/icon/icon.ico" type="image/x-icon">
     
 </head>
 <body>
