@@ -6,7 +6,6 @@
     <title>Aurora Bliss</title>
     <link rel="stylesheet" href="styles/admin_login.css">
     <link rel="icon" href="images/icon/icon.ico" type="image/x-icon">
-
 </head>
 <header>
     <div class="container">
@@ -18,16 +17,16 @@
     <section class="login-section">
         <div class="login-box">
             <h1>Employee Login</h1>
-            <form action="employee_login.php" class="login-form">
+            <form action="./adminPHP/employee_login.php" class="login-form" method="post">
                 <div class="input-group">
                     <label for="employee-id">Employee ID <span class="required">*</span></label>
-                    <input type="text" id="employee-id" placeholder="Employee ID" required>
+                    <input type="text" id="employee-id" placeholder="Employee ID" name="empID" required>
                 </div>
                 <div class="input-group">
                     <label for="employee-password">Password <span class="required">*</span></label>
-                    <input type="password" id="employee-password" placeholder="Password" required>
+                    <input type="password" id="employee-password" placeholder="Password"  name="empPSW" required>
                 </div>
-                <button type="submit" class="btn login-btn">Login</button>
+                 <button type="submit" class="btn login-btn">Login</button>
             </form>
         </div>
     </section>
