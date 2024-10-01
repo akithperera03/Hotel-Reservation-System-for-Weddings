@@ -1,39 +1,6 @@
-<!DOCTYPE html> 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aurora Bliss</title>
+<?php include 'header.php'; ?>
+<title>Admin</title>
     <link rel="stylesheet" href="styles/admin.css">
-    <link rel ="stylesheet" href ="styles/stylesheet.css">
-    <link rel="icon" href="images/icon/icon.ico" type="image/x-icon">
-</head>
-<body>
-
-    <header>
-        <div class="container">
-            <div class="logo"> 
-                <a href="index.php"><img src="images/logo_1.jpg" id="logoimage" alt="Aurora Bliss Logo"></a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.php">HOME</a></li>
-                    <li><a href="aboutUs.php">ABOUT US</a></li>
-                    <li><a href="ourFeatures.php">OUR FEATURES</a></li>
-                    <li><a href="venue.php">VENUE</a></li>
-                    <li><a href="gallery.php">GALLERY</a></li>
-                    <li><a href="contactUs.php">CONTACT US</a></li>
-                </ul>
-            </nav>
-            <a href="weddingreservation.php">
-              <button type="button" class="booking-btn">Booking Request</button>
-            </a>
-            <div class="user">
-                <span>Hello!</span>
-                <a href="login.php">Login</a>
-            </div>
-        </div>
-    </header>
 <main>
     <div class="admin-panel">
         <div class="admin-section">
@@ -191,44 +158,5 @@
             </table>
         </div>
     </div>
-    
 </main>
-<footer>
-    <div class="container">
-        <div class="logo"> 
-            <a href="index.php"><img src="images/logo_1.jpg" id="logoimage" alt="Aurora Bliss Logo"></a>
-        </div> 
-        <div class="social">
-            <a href="https://www.instagram.com"><img src="images/socialmedia/instagram.jpeg" alt="Instagram"></a>
-            <a href="https://www.facebook.com"><img src="images/socialmedia/facebook.png" alt="Facebook"></a>
-            <a href="https://www.x.com"><img src="images/socialmedia/x.png" alt="X"></a>
-            <a href="https://www.linkedin.com"><img src="images/socialmedia/linkedin.png" alt="LinkedIn"></a>
-        </div>
-
-        <div class="subscribe">
-            <h3>Subscribe to Our Newsletter</h3>
-            <form id="subscribeForm" method="POST" action="">
-                <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-
-        <div class="legal">
-            <div class="bottomlinks">
-                <p> 
-                    <a href="termsAndConditions.php"> Terms and Conditions </a> | 
-                    <a href="privacyPolicy.php"> Privacy and Cookies Policy </a> | 
-                    <a href="FAQ.php"> FAQ </a> | 
-                    <a href="careers.php"> Work with us </a>
-                </p>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2024 Aurora Bliss. All Rights Reserved.</p>
-            <p>Website developed by <a href="developer_info.html">CodeCrafters</a></p>
-        </div>
-    </div>
-</footer>
-
-</body>
-</html>
+<?php include 'footer.php'; ?>
