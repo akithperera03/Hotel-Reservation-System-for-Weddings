@@ -207,4 +207,22 @@ footer .copyright {
 .refresh-button:hover {
     background-color: #e0a800;        /* Darker yellow on hover */
 }
+.profile-info {
+    background-color: #ffffff; /* Background color of the box */
+    border: 1px solid #ddd; /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Inner spacing */
+    margin: 20px auto; /* Center the box */
+    max-width: 400px; /* Maximum width */
+}
+
+.admin-details p {
+    margin: 10px 0; /* Margin between paragraphs */
+    font-size: 1.1em; /* Font size for better readability */
+}
+
+.admin-details strong {
+    color: #000000; /* Change the color of labels */
+}
 

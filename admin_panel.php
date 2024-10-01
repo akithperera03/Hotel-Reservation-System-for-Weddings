@@ -10,7 +10,7 @@ if (!isset($_SESSION['adminID'])) {
 
 // Fetch admin details from the database using the session variable
 $adminID = $_SESSION['adminID'];
-$sql = "SELECT empID, id FROM employees WHERE id = ?";
+$sql = "SELECT empID, id,empName FROM employees WHERE id = ?";
 if ($stmt = $connection->prepare($sql)) {
     $stmt->bind_param("i", $adminID); // Bind the admin ID
     $stmt->execute();
@@ -81,8 +81,9 @@ function refreshPage() {
     <h3><center>Admin Dashboard</center></h3>
     <div class="profile-info">
         <div class="admin-details">
-            <p><strong>Admin ID:</strong> <?php echo htmlspecialchars($admin['id']); ?></p>
-            <p><strong>Admin Name:</strong> <?php echo htmlspecialchars($admin['empID']); ?></p>
+            <p><strong>Employee ID:</strong> <?php echo htmlspecialchars($admin['id']); ?></p>
+            <p><strong>Employee Name:</strong> <?php echo htmlspecialchars($admin['empID']); ?></p>
+            <p><strong>Employee Name:</strong> <?php echo htmlspecialchars($admin['empName']); ?></p>
         </div>
     </div>
 </div>

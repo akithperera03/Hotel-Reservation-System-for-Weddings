@@ -15,7 +15,7 @@ require_once '../configurations/config.php';
 $adminID = $_SESSION['empID'];
 
 // Query the admins table to fetch admin details
-$sql = "SELECT empID, role FROM admins WHERE adminID = '$adminID'";
+$sql = "SELECT empID, role FROM employees WHERE empID = '$adminID'";
 $result = $connection->query($sql);
 
 if ($result->num_rows > 0) {
