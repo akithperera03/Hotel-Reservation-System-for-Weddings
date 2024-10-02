@@ -8,6 +8,8 @@ if ($result->num_rows > 0){
         echo "<tr>";
         echo "<td>" . $row["userID"] . "</td>";
         echo "<td>" . $row["userName"] . "</td>";
+        echo "<td>" . $row["userFName"] . "</td>";
+        echo "<td>" . $row["userEmail"] . "</td>";
         echo "<td>" . $row["userPSW"] . "</td>";
         echo "<td>";
         echo "<a href='adminPHP/deleteUserAcc.php?delete_id=" . $row['userID'] . "' class='action-button' onclick=\"return confirm('Are you sure you want to delete this user?');\">Delete</a>";

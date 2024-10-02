@@ -1,15 +1,20 @@
 <?php include 'header.php'; ?>
-    <title>Register</title>
+    <head><title>Register</title></head>
+
+    <body>
+
     <link rel="stylesheet" href="styles/registering.css">
-    <script src="js/registering.js"></script>
+    <script src="js/regitering.js" defer></script>
     <div class="form-container">
         <h2>SIGN UP</h2>
-        <form action="#" onsubmit="return checkPassword()">
-            <input type="text" name="fullname" placeholder="Full Name">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="email" name="email" placeholder="Email">
-            <input type="password" name="password" id="pwd" placeholder="Password" required>
-            <input type="password" name="repassword" id="repwd" placeholder="Re-type Password" required>
+
+
+        <form method="POST" action="addNewUser.php">
+            <input type="text" name="userFName" placeholder="Full Name">
+            <input type="text" name="userName" placeholder="Username" required>
+            <input type="email" name="userEmail" placeholder="Email">
+            <input type="password" name="userPSW" id="pwd" placeholder="Password" required>
+           
             
             <div class="terms">
                 <h3>Terms and Conditions</h3>

@@ -99,9 +99,11 @@ function refreshPage() {
     </div>
     <table>
         <tr>
-            <th>Username</th>
-            <th>UserID</th>
-            <th>Email</th>
+            <th>User ID</th>
+            <th>User Name</th>
+            <th>User Full Name</th>
+            <th>User Email</th>
+            <th>User Password</th>
             <th>Action</th>
         </tr>
         <?php include './adminPHP/manageUserAcc.php';?>
