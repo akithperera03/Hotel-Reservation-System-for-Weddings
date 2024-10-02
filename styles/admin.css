@@ -226,3 +226,40 @@ footer .copyright {
     color: #000000; /* Change the color of labels */
 }
 
+.back {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.back:hover {
+    background-color: #45a049;
+}
+
+.in {
+    margin-bottom: 20px;
+}
+
+.in input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.in button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.in button:hover {
+    background-color: #45a049;
+}
+

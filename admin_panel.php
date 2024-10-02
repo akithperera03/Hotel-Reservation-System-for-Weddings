@@ -87,9 +87,16 @@ function refreshPage() {
         </div>
     </div>
 </div>
+
 <div class="user-management">
     <h3>Manage User Accounts</h3>
+    <div class="actions">
+    <form method="GET" action="./adminPHP/searchUserAcc.php" class ="in">
+    <input type="text" name="search" placeholder="Search by username or ID" required>
+    <button type="submit">Search</button>
+</form>
     <a href="addUser_Form.php" class="action-button">Add New User</a>
+    </div>
     <table>
         <tr>
             <th>Username</th>
@@ -125,6 +132,7 @@ function refreshPage() {
                 <th>Transaction_ID</th>
                 <th>Date and Time</th>
             </tr>
+            <?php include './adminPHP/manageEmpAcc.php';?>
     </table>
 </div>
 </main>
