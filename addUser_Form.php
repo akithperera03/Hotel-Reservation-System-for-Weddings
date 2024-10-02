@@ -10,7 +10,7 @@ if (!isset($_SESSION['adminID'])) {
 
 // Fetch admin details from the database using the session variable
 $adminID = $_SESSION['adminID'];
-$sql = "SELECT empID, id,empName FROM employees WHERE id = ?";
+$sql = "SELECT empID, id FROM employees WHERE id = ?";
 if ($stmt = $connection->prepare($sql)) {
     $stmt->bind_param("i", $adminID); // Bind the admin ID
     $stmt->execute();
@@ -37,9 +37,11 @@ $connection_status = ($connection->connect_error) ? "Server Disconnected" : "Ser
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/admin.css">
     <link rel="stylesheet" href="styles/stylesheet.css">
+    <link rel="stylesheet" href="styles/updateForm.css">
+    <link rel="stylesheet" href="styles/addEmp.css">
     <script src="js/time.js" defer></script>
     <link rel="icon" href="images/icon/icon.ico" type="image/x-icon">
-    <title>Admin</title>
+    <title>Add Employee</title>
 </head>
 <body>
     <header>
@@ -75,58 +77,30 @@ function refreshPage() {
 }
 </script> 
     </header>
+
+
+
 <main>
-
-<div class="admin-profile">
-    <h3><center>Admin Dashboard</center></h3>
-    <div class="profile-info">
-        <div class="admin-details">
-            <p><strong>Employee ID:</strong> <?php echo htmlspecialchars($admin['id']); ?></p>
-            <p><strong>Employee Name:</strong> <?php echo htmlspecialchars($admin['empID']); ?></p>
-            <p><strong>Employee Name:</strong> <?php echo htmlspecialchars($admin['empName']); ?></p>
-        </div>
+    <div class="form-container">
+        <h2>Add New User</h2>
+        <form action="./adminPHP/addUser.php" method="POST">
+            <div class="form-group">
+                <label for="empID">User ID:</label>
+                <input type="text" id="empID" name="empID" required>
+            </div>
+            <div class="form-group">
+                <label for="empPSW">Password:</label>
+                <input type="password" id="empPSW" name="empPSW" required>
+            </div>
+            <div class="form-group">
+                <label for="role">Role:</label>
+                <select id="role" name="role" required>
+                    <option value="admin">Admin</option>
+                    <option value="manager">Manager</option>
+                </select>
+            </div>
+            <button type="submit" class="submit-button">Add Employee</button>
+        </form>
     </div>
-</div>
-<div class="user-management">
-    <h3>Manage User Accounts</h3>
-    <a href="addUser_Form.php" class="action-button">Add New User</a>
-    <table>
-        <tr>
-            <th>Username</th>
-            <th>UserID</th>
-            <th>Email</th>
-            <th>Action</th>
-        </tr>
-        <?php include './adminPHP/manageUserAcc.php';?>
-    </table>
-</div>
-
-<div class="employee-management">
-  <h3>Manage Employee Accounts</h3>  
-    <a href="addEmp_Form.php" class="action-button">Add New Employee</a>
-    <table>
-        <tr>
-            <th>Username</th>
-            <th>UserID</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Action</th>
-        </tr>
-        <?php include './adminPHP/manageEmpAcc.php';?>
-    </table>
-</div>
-
-<div class="payments-section">
-    <h3>Payments</h3>
-    <table>
-            <tr>
-                <th>Username</th>
-                <th>UserID</th>
-                <th>Transaction_ID</th>
-                <th>Date and Time</th>
-            </tr>
-    </table>
-</div>
 </main>
-</body>
 <?php include 'footer.php'; ?>

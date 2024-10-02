@@ -1,3 +1,28 @@
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
+
+// Fetch employee data
+if (isset($_GET['employee_id'])) {
+    $employee_id = $_GET['employee_id'];
+
+    // Prepare the SQL statement
+    $stmt = $connection->prepare("SELECT * FROM employees WHERE id = ?");
+    $stmt->bind_param("i", $employee_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $employee = $result->fetch_assoc();
+    } else {
+        echo "Employee not found.";
+        exit();
+    }
+    $stmt->close();
+} else {
+    echo "Employee ID not specified.";
+    exit();
+}
+?>
 <?php 
 session_start(); // Start the session
 require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
@@ -10,7 +35,7 @@ if (!isset($_SESSION['adminID'])) {
 
 // Fetch admin details from the database using the session variable
 $adminID = $_SESSION['adminID'];
-$sql = "SELECT empID, id,empName FROM employees WHERE id = ?";
+$sql = "SELECT empID, id FROM employees WHERE id = ?";
 if ($stmt = $connection->prepare($sql)) {
     $stmt->bind_param("i", $adminID); // Bind the admin ID
     $stmt->execute();
@@ -35,14 +60,17 @@ $connection_status = ($connection->connect_error) ? "Server Disconnected" : "Ser
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/admin.css">
+    <title>Update Employee Details</title>
+    <link rel="stylesheet" href="styles/updateForm.css">
     <link rel="stylesheet" href="styles/stylesheet.css">
+    <link rel="stylesheet" href="styles/admin.css">
     <script src="js/time.js" defer></script>
     <link rel="icon" href="images/icon/icon.ico" type="image/x-icon">
     <title>Admin</title>
+     <!-- Add your CSS link here -->
 </head>
 <body>
-    <header>
+<header>
         <div class="container">
             <div class="logo"> 
                 <a href="index.php"><img src="images/logo_1.jpg" id="logoimage" alt="Aurora Bliss Logo"></a>
@@ -63,70 +91,38 @@ $connection_status = ($connection->connect_error) ? "Server Disconnected" : "Ser
     </div>
     <div class="admin-controls">
     <a href="./adminPHP/admin_logout.php" class="logout-button">Logout</a>
-    <button class="refresh-button" onclick="refreshPage()">Refresh</button>
 </div>
 <div class="live-time">
             <h4><span id="clock"></span></h4>
         </div>
-        </div>
-        <script>
-function refreshPage() {
-    location.reload();  // Reloads the current page
-}
-</script> 
+        </div> 
     </header>
-<main>
+<div class="update-form-container">
+<h2>Update Employee Details</h2>
 
-<div class="admin-profile">
-    <h3><center>Admin Dashboard</center></h3>
-    <div class="profile-info">
-        <div class="admin-details">
-            <p><strong>Employee ID:</strong> <?php echo htmlspecialchars($admin['id']); ?></p>
-            <p><strong>Employee Name:</strong> <?php echo htmlspecialchars($admin['empID']); ?></p>
-            <p><strong>Employee Name:</strong> <?php echo htmlspecialchars($admin['empName']); ?></p>
-        </div>
-    </div>
-</div>
-<div class="user-management">
-    <h3>Manage User Accounts</h3>
-    <a href="addUser_Form.php" class="action-button">Add New User</a>
-    <table>
-        <tr>
-            <th>Username</th>
-            <th>UserID</th>
-            <th>Email</th>
-            <th>Action</th>
-        </tr>
-        <?php include './adminPHP/manageUserAcc.php';?>
-    </table>
-</div>
+<form action="./adminPHP/updateEmp.php" method="POST">
+    <input type="hidden" name="employee_id" value="<?php echo htmlspecialchars($employee['id']); ?>">
 
-<div class="employee-management">
-  <h3>Manage Employee Accounts</h3>  
-    <a href="addEmp_Form.php" class="action-button">Add New Employee</a>
-    <table>
-        <tr>
-            <th>Username</th>
-            <th>UserID</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Action</th>
-        </tr>
-        <?php include './adminPHP/manageEmpAcc.php';?>
-    </table>
-</div>
+    <label for="empID">Employee ID</label>
+    <input type="text" name="empID" id="empID" value="<?php echo htmlspecialchars($employee['empID']); ?>" required>
 
-<div class="payments-section">
-    <h3>Payments</h3>
-    <table>
-            <tr>
-                <th>Username</th>
-                <th>UserID</th>
-                <th>Transaction_ID</th>
-                <th>Date and Time</th>
-            </tr>
-    </table>
+    <label for="empPSW">Password</label>
+    <input type="password" name="empPSW" id="empPSW" value="<?php echo htmlspecialchars($employee['empPSW']); ?>" required>
+
+    <label for="empName">Employee Name</label>
+    <input type="text" name="empName" id="empName" value="<?php echo htmlspecialchars($employee['empName']); ?>" required>
+
+    <label for="empEmail">Email</label>
+    <input type="email" name="empEmail" id="empEmail" value="<?php echo htmlspecialchars($employee['empEmail']); ?>" required>
+
+    <label for="role">Role:</label>
+            <select name="role" id="role" required>
+                <option value="admin" <?php if ($employee['role'] == 'admin') echo 'selected'; ?>>Admin</option>
+                <option value="manager" <?php if ($employee['role'] == 'manager') echo 'selected'; ?>>Manager</option>
+            </select>
+    <button type="submit" class="update-button">Update Employee</button>
+</form>
 </div>
-</main>
 </body>
 <?php include 'footer.php'; ?>
+

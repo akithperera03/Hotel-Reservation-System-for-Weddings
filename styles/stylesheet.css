@@ -305,4 +305,7 @@ footer .copyright a {
 footer .copyright a:hover {
     text-decoration: underline;
 }
-  
+.error {
+    color: red;
+    margin-top: 10px;
+}

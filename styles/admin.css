@@ -7,7 +7,7 @@
     background-color: #f4f4f4;
 }
 
-.admin-section, .user-management, .payments-section {
+.admin-section, .user-management, .payments-section, .employee-management {
     border: 1px solid #ddd;
     padding: 20px;
     background-color: #fff;
@@ -58,23 +58,7 @@ h3 {
     flex: 1;
 }
 
-.server-status .status-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
 
-.status {
-    font-weight: bold;
-}
-
-.connected {
-    color: green;
-}
-
-.disconnected {
-    color: red;
-}
 
 .on {
     color: green;
@@ -93,18 +77,18 @@ textarea {
 
 .admin-controls {
     display: flex;
-    gap: 15px;
+    gap: 20px;
     justify-content: space-between;
 }
 
 .admin-controls button {
     background-color: #333;
     color: white;
-    padding: 12px;
+    padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.4s ease;
 }
 
 .admin-controls button:hover {
@@ -115,6 +99,11 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+}
+
+/* Add hover effect to table rows */
+table tr:hover {
+    background-color: #f1f1f1; /* Light gray background on hover */
 }
 
 table, th, td {
@@ -133,30 +122,107 @@ th, td {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-right: 5px;
 }
 
 .action-button:hover {
     background-color: #218838;
 }
 
-.status.success {
-    color: green;
-}
-
-.status.error {
-    color: red;
-}
 footer .copyright {
     margin-top: 20px;
     font-size: 0.9em;
     color: #aaa;
 }
-
-footer .copyright a {
-    color: #fff;
-    text-decoration: none;
+.status {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em; /* Smaller font size for the status box */
 }
 
-footer .copyright a:hover {
-    text-decoration: underline;
+.server-status {
+    background-color: #f9f9f9; /* Light background for the status box */
+    padding: 15px; /* Padding around the status box */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    margin-top: 20px; /* Space above the status box */
 }
+
+.server-status p {
+    text-align: right; /* Right-align text */
+    flex: 1; /* Allow p to take available space */
+}
+
+.connected {
+    color: white;
+    background-color: green; /* Green for connected */
+}
+
+.disconnected {
+    color: white;
+    background-color: red; /* Red for disconnected */
+}
+
+.server-status .status-item {
+    display: flex;
+    align-items: center; /* Center align items vertically */
+    justify-content: space-between; /* Space between label and status */
+    margin-bottom: 15px; /* Space between items */
+    padding: 5px; /* Padding for each status item */
+    border: 1px solid #ddd; /* Light border around each item */
+    border-radius: 5px; /* Rounded corners for items */
+}
+.logout-button {
+    background-color: #dc3545; /* Red for logout */
+    color: white;
+    padding: 1px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline for links */
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+#clock {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: black; /* Adjust the color as per your theme */
+}
+
+.refresh-button {
+    background-color: #ffc107;        /* Yellow background for refresh button */
+    color: white;                     /* Button text color */
+    padding: 10px 20px;               /* Button padding */
+    border: none;                     /* Remove border */
+    border-radius: 5px;              /* Rounded corners */
+    cursor: pointer;                  /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.refresh-button:hover {
+    background-color: #e0a800;        /* Darker yellow on hover */
+}
+.profile-info {
+    background-color: #ffffff; /* Background color of the box */
+    border: 1px solid #ddd; /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Inner spacing */
+    margin: 20px auto; /* Center the box */
+    max-width: 400px; /* Maximum width */
+}
+
+.admin-details p {
+    margin: 10px 0; /* Margin between paragraphs */
+    font-size: 1.1em; /* Font size for better readability */
+}
+
+.admin-details strong {
+    color: #000000; /* Change the color of labels */
+}
+

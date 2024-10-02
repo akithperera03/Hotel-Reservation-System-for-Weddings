@@ -1,0 +1,69 @@
+h2 {
+    color: #d60000;
+    text-align: center; 
+}
+
+.h{
+    margin: 20px 0;
+    padding: 10px; /* Add some padding for spacing */
+    border: 1px solid #0e0e0e; /* Add a border for emphasis */
+    border-radius: 8px; /* Round the corners */
+    background-color: #f9f9f9; /* Light background for contrast */
+} 
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px; /* Slightly increased gap */
+    padding: 20px;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Smoother hover effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.gallery img:hover {
+    transform: scale(1.1); /* Slightly increase scale for a more pronounced effect */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px; /* Add padding for a nicer look */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%; /* Slightly more width for content */
+    border-radius: 10px; /* Round the modal corners */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.close:hover {
+    color: #d60000; /* Change color on hover */
+}
