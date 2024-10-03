@@ -93,9 +93,9 @@ function refreshPage() {
     <div class="actions">
     <form method="GET" action="./adminPHP/searchUserAcc.php" class ="in">
     <input type="text" name="search" placeholder="Search by username or ID" required>
-    <button type="submit">Search</button>
+    <button type="submit" class="action-button">Search</button>
 </form>
-    <a href="addUser_Form.php" class="action-button">Add New User</a>
+    <a href="addUser_Form.php" class="action-button" id ="newemp">Add New User</a>
     </div>
     <table>
         <tr>
@@ -128,13 +128,21 @@ function refreshPage() {
 <div class="payments-section">
     <h3>Payments</h3>
     <table>
-            <tr>
-                <th>Username</th>
-                <th>UserID</th>
-                <th>Transaction_ID</th>
-                <th>Date and Time</th>
-            </tr>
-            <?php include './adminPHP/manageEmpAcc.php';?>
+        <tr>
+            <th>Order ID</th>
+            <th>User ID</th>
+            <th>Card Type</th>
+            <th>Card Number</th>
+            <th>Expiry Date</th>
+            <th>Security Code</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Country</th>
+            <th>Cost</th>
+            <th>Date</th>
+        </tr>
+        <?php include './adminPHP/paymentDetails.php'; ?> 
     </table>
 </div>
 </main>

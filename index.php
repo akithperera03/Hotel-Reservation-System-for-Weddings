@@ -1,5 +1,6 @@
 <?php include 'header.php'; ?>
     <title>Aurora Bliss</title>
+    <link rel="stylesheet" href="styles/index.css">
     <main>
         <section class="hero">
             <div class="container">

@@ -10,7 +10,7 @@ html, body {
 }
 
 body {
-    display: flex;
+   
     flex-direction: column;
     min-height: 100vh;
     font-family: Arial, sans-serif;
@@ -60,10 +60,56 @@ nav ul li a {
 nav ul li a:hover {
     color: #ddd;
 }
+/* Button Styling */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color:  #007bff;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.logout{
+    display: inline-block;
+    padding: 7px 20px;
+    background-color: #E53935;
+    color:  #FFFFFF;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
 
+.logout:hover {
+    background-color: #C62828;
+}
+.dash{
+    
+    padding: 7px 10px;
+    background-color:  #FB8C00;
+    color: #000000;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.dash:hover {
+    background-color:  #FB8C00;
+}
 /* Simple blue button */
 a .booking-btn {
-    background-color: #007bff; /* Blue color */
+    background-color:#1A73E8; /* Blue color */
     color: white;
     padding: 10px 20px;
     font-size: 16px;
@@ -75,7 +121,7 @@ a .booking-btn {
 }
 
 a .booking-btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color:#165BB5; /* Darker blue on hover */
 }
 
 main {
@@ -261,4 +307,22 @@ footer .copyright a {
 
 footer .copyright a:hover {
     text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
 }

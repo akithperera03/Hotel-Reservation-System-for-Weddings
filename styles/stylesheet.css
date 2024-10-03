@@ -32,40 +32,56 @@ header .container {
 
 .logo img {
     width: 75px;
-    height: 75px;
+    height: 75px; 
+    margin-right: 20px; /* Add space to the right of the logo */
+}
+
+nav {
+    margin: 0 20px; /* Add space around the nav */
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+ul li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #4a4e69;
 }
 
 nav ul {
     list-style: none;
     display: flex;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
 }
 
 nav ul li {
-    margin-right: 20px;
+    margin-right: 30px; /* Increased margin for better spacing */
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
+nav ul li:last-child {
+    margin-right: 0; /* No margin on the last item */
 }
 
-nav ul li a:hover {
-    color: #ddd;
+/* Adjustments for .user section */
+.user {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Push user section to the right */
+    gap: 15px; /* Space between the greeting and logout button */
 }
-/* Simple blue button */
-a .booking-btn {
-    background-color: #007bff; /* Blue color */
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+
+.user span {
+    font-size: 16px; /* Font size for the greeting */
+    font-weight: bold; /* Bold text for the user's name */
+}
+
+/* Booking button style adjustments */
+.btn.booking-btn {
+    margin-left: 20px; /* Add space to the left of the booking button */
 }
 
 a .booking-btn:hover {
@@ -75,21 +91,28 @@ a .booking-btn:hover {
 .user {
     display: flex;
     align-items: center;
-    color: white;
+    margin-left: auto; /* Push user section to the right */
+    gap: 15px; /* Space between the greeting and logout button */
 }
 
 .user span {
-    margin-right: 10px;
+    font-size: 16px; /* Font size for the greeting */
+    font-weight: bold; /* Bold text for the user's name */
 }
 
 .user a {
-    text-decoration: none;
-    color: #ddd;
+    text-decoration: none; /* Remove underline from the link */
+    background-color: #007BFF; /* Button background color */
+    color: white; /* Text color */
+    padding: 8px 12px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
 .user a:hover {
-    color: #fff;
+    background-color: #0056b3; /* Darker shade on hover */
 }
+
 
 /* Hero Section */
 .hero {
@@ -109,155 +132,6 @@ a .booking-btn:hover {
     margin-bottom: 30px;
 }
 
-/* Featured Weddings Section */
-.featured-weddings {
-    padding: 40px 0;
-    background-color: #f9f9f9;
-    text-align: center;
-}
-
-.featured-weddings h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.wedding-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    position: relative;
-}
-
-.wedding {
-    width: 200px;
-    height: 300px;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-}
-
-.wedding img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.wedding:hover {
-    transform: scale(1.05);
-}
-
-.wedding:hover img {
-    transform: scale(1.1);
-}
-
-/* Most Reviewed Venues Section */
-.most-reviewed {
-    padding: 40px 0;
-    background-color: #f0f0f0;
-    text-align: center;
-}
-
-.most-reviewed h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.venue-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    position: relative;
-}
-
-.venue {
-    width: 220px;
-    padding: 15px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-    text-align: center;
-}
-
-.venue img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-.venue h3 {
-    font-size: 1.3em;
-    color: #444;
-    margin: 10px 0;
-}
-
-.venue p {
-    font-size: 1em;
-    color: #777;
-}
-
-.venue:hover {
-    transform: translateY(-10px);
-}
-
-/* Key Facilities Section */
-.key-facilities {
-    padding: 40px 0;
-    background-color: #f9f9f9;
-    text-align: center;
-}
-
-.key-facilities h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.facility-list {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.facility {
-    width: 200px;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-    text-align: center;
-}
-
-.facility img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.facility h3 {
-    margin-top: 10px;
-    font-size: 1.2em;
-    color: #444;
-}
-
-.facility:hover {
-    transform: scale(1.05);
-}
-
-.facility:hover img {
-    transform: scale(1.1);
-}
 
 /* Footer */
 /* Footer */

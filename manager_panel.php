@@ -1,139 +1,151 @@
-<?php include 'header.php'; ?>
-    <title>Manager</title>
+<?php 
+session_start(); // Start the session
+require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
+
+// Check if the user is logged in
+if (!isset($_SESSION['adminID'])) {
+    header("Location: ../admin.php"); // Redirect if not logged in
+    exit();
+}
+
+// Fetch admin details from the database using the session variable
+$adminID = $_SESSION['adminID'];
+$sql = "SELECT empID, id,empName FROM employees WHERE id = ?";
+if ($stmt = $connection->prepare($sql)) {
+    $stmt->bind_param("i", $adminID); // Bind the admin ID
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    // Check if the admin exists
+    if ($result->num_rows > 0) {
+        $admin = $result->fetch_assoc(); // Fetch admin details
+    } else {
+        // Handle case where admin is not found (should not happen if logged in)
+        echo "Admin not found.";
+        exit();
+    }
+    $stmt->close();
+}
+// Check server connection status
+$connection_status = ($connection->connect_error) ? "Server Disconnected" : "Server Connected";
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/manager.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <main>  
-        <main class = "dashboard main">
-            <section class="manager-section">
-                <div class="manager-profile">
-                    <img src="images/manager-avatar.jpg" alt="Manager Avatar" class="manager-avatar">
-                    <div class="manager-info">
-                        <p>Employee Name: John Doe</p>
-                        <p>Employee ID: gdf4545dfd</p>
-                    </div>
-                    <button class="btn logout-btn">Log Out</button>
-                </div>
-            </section>
-        
-            <section class="reservation-section">
-                <h2>Reservation Requests</h2>
-                <table class="reservation-table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Date</th>
-                            <th>Email</th>
-                            <th>Address</th>
-                            <th>Actions</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Janice Monahan</td>
-                            <td>2024-05-01</td>
-                            <td>Janice_Monahan@yahoo.com</td>
-                            <td>Port Beulah, Lowa 90719, USA</td>
-                            <td>
-                                <button class="action-btn approve-btn">✓</button>
-                                <button class="action-btn reject-btn">✕</button>
-                            </td>
-                            <td>Pending</td>
-                        </tr>
-                        <tr>
-                            <tr>
-                                <td>Rollin Fadel</td>
-                                <td>2024-05-08</td>
-                                <td>Rollin_Fadel@gmail.com</td>
-                                <td>Lake Matilda, Tenessee 74062, USA</td>
-                                <td>
-                                    <button class="action-btn approve-btn">✓</button>
-                                    <button class="action-btn reject-btn">✕</button>
-                                </td>
-                                <td>Approved</td>
-                            </tr>
-                            <tr>
-                                <td>Lera Stroman</td>
-                                <td>2024-06-30</td>
-                                <td>Lera_Stroman3@gmail.com</td>
-                                <td>Vicentaview, Mississippi 47576 9339, USA</td>
-                                <td>
-                                    <button class="action-btn approve-btn">✓</button>
-                                    <button class="action-btn reject-btn">✕</button>
-                                </td>
-                                <td>Cancled</td>
-                            </tr>
-                        
-                    </tbody>
-                </table>
-            </section>
-        
-            <section class="employee-section">
-                <h2>Employee List</h2>
-                <table class="employee-table">
-                    <thead>
-                        <tr>
-                            <th>Emp No</th>
-                            <th>Emp Name</th>
-                            <th>Role</th>
-                            <th>Assigned Task</th>
-                            <th>Availability</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Samantha Perera</td>
-                            <td>Front Desk Supervisor</td>
-                            <td>Check-in/Check-out</td>
-                            <td>Available (9:00 AM - 5:00 PM)</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Ravi Fernando</td>
-                            <td>Coordinator</td>
-                            <td>Corporate Conference Setup</td>
-                            <td>Available (1:00 PM - 9:00 PM)</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Lakshmi Wijesinghe</td>
-                            <td>Housekeeping Manager</td>
-                            <td>Inventory Management</td>
-                            <td>Available (7:00 AM - 3:00 PM)</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td> Nimal De Silva</td>
-                            <td>Catering Supervisor</td>
-                            <td>Banquet Preparation</td>
-                            <td>Oncall (Flexible Hours)</td>
-                        </tr>
+    <link rel="stylesheet" href="styles/stylesheet.css">
+    <script src="js/time.js" defer></script>
+    <link rel="icon" href="images/icon/icon.ico" type="image/x-icon">
+    <title>Manager</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo"> 
+                <a href="index.php"><img src="images/logo_1.jpg" id="logoimage" alt="Aurora Bliss Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.php">HOME</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user">
+                <span><strong>Manger :</strong> <?php echo htmlspecialchars($admin['empID']); ?></p></span>
+            </div>
+            <div class="status-item">
+        <span class="status <?php echo ($connection_status == 'Server Connected') ? 'connected' : 'disconnected'; ?>">
+            <?php echo $connection_status; ?>
+        </span>
+    </div>
+    <div class="admin-controls">
+    <a href="./adminPHP/admin_logout.php" class="logout-button">Logout</a>
+    <button class="refresh-button" onclick="refreshPage()">Refresh</button>
+</div>
+<div class="live-time">
+            <h4><span id="clock"></span></h4>
+        </div>
+        </div>
+        <script>
+function refreshPage() {
+    location.reload();  // Reloads the current page
+}
+</script> 
+    </header>
+<main>
 
-                    </tbody>
-                </table>
-            </section>
-    
-            <section class="summary-section">
-                <div class="stats-summary">
-                    <p>Total Bookings: 56</p>
-                    <p>Total Revenue: LKR 1,500,000</p>
-                    <p>Pending Tasks: 2</p>
-                    <p>Available Rooms: 15</p>
-                    <p>Currently On Duty: 15</p>
-                    <p>On Leave or Off-Duty: 2</p>
-                </div>
-        
-                <div class="alerts">
-                    <h3>Alerts</h3>
-                    <ul>
-                        <li>Low Inventory Warning: Housekeeping Supplies</li>
-                        <li>Guest Wi-Fi Connectivity Issues</li>
-                        <li>System Update Available</li>
-                    </ul>
-                    <button class="btn clear-btn">Clear All</button>
-                </div>
-            </section>
+<div class="admin-profile">
+    <h3><center>Manger Dashboard</center></h3>
+    <div class="profile-info">
+        <div class="admin-details">
+            <p><strong>Employee ID:</strong> <?php echo htmlspecialchars($admin['id']); ?></p>
+            <p><strong>Employee Name:</strong> <?php echo htmlspecialchars($admin['empID']); ?></p>
+            <p><strong>Employee Name:</strong> <?php echo htmlspecialchars($admin['empName']); ?></p>
+        </div>
+    </div>
+</div>
 
-    </main>
-    <?php include 'footer.php'; ?>
+<div class="user-management">
+    <h3>Manage User Accounts</h3>
+    <div class="actions">
+    <form method="GET" action="./adminPHP/searchUserAcc.php" class ="in">
+    <input type="text" name="search" placeholder="Search by username or ID" required>
+    <button type="submit" class="action-button">Search</button>
+</form>
+    <a href="addUser_Form.php" class="action-button">Add New User</a>
+    </div>
+    <table>
+        <tr>
+            <th>User ID</th>
+            <th>User Name</th>
+            <th>User Full Name</th>
+            <th>User Email</th>
+            <th>User Password</th>
+            <th>Action</th>
+        </tr>
+        <?php include './adminPHP/manageUserAcc.php';?>
+    </table>
+</div>
+
+<div class="employee-management">
+  <h3>Manage Employee Accounts</h3>  
+    <a href="addEmp_Form.php" class="action-button">Add New Employee</a>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>UserID</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Action</th>
+        </tr>
+        <?php include './adminPHP/manageEmpAcc.php';?>
+    </table>
+</div>
+
+<div class="payments-section">
+    <h3>Payments</h3>
+    <table>
+        <tr>
+            <th>Order ID</th>
+            <th>User ID</th>
+            <th>Card Type</th>
+            <th>Card Number</th>
+            <th>Expiry Date</th>
+            <th>Security Code</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Country</th>
+            <th>Cost</th>
+            <th>Date</th>
+        </tr>
+        <?php include './adminPHP/paymentDetails.php'; ?> 
+    </table>
+</div>
+
+</main>
+</body>
+<?php include 'footer.php'; ?>

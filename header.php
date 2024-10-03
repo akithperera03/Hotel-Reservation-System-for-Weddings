@@ -1,10 +1,13 @@
+<?php
+session_start(); // Start the session at the beginning of the file
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/aboutus.css">
-    <link rel="stylesheet" href="styles/stylesheet.css">
+   
+    <link rel="stylesheet" href="styles/contact.css">
     <script src="js/aboutus.js" defer></script>
     <link rel="icon" href="images/icon/icon.ico" type="image/x-icon">
 </head>
@@ -28,10 +31,15 @@
                 <button type="button" class="btn booking-btn">Booking Request</button>
             </a>
             <div class="user">
-                <span>Hello!</span>
-                <a href="login.php">Login</a>
+                <?php if (isset($_SESSION['user_email'])): ?>
+                   <a href="index.php" class="dash"><span>Hello, <?php echo htmlspecialchars($_SESSION['user_name']); ?>!<br>Dashboard</span></a> 
+                    <a href="logout.php" class="logout">Logout</a>
+                <?php else: ?>
+                    <span>Hello!</span>
+                    <a href="login.php" class="btn">Login</a>
+                <?php endif; ?>
             </div>
         </div>
     </header>
-    </body>
+</body>
 </html>
