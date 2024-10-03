@@ -1,5 +1,7 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
+if (!$connection || !$connection->ping()) {
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
+}
 
 // SQL query to fetch payment details
 $sql = "SELECT order_id, user_id, card_type, card_number, expiry_date, 
@@ -31,5 +33,5 @@ if ($result->num_rows > 0) {
 }
 
 // Close the connection
-$connection->close();
+
 ?>

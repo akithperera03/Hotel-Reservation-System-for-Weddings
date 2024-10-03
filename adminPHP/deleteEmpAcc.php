@@ -23,5 +23,5 @@ if (isset($_GET['delete_id'])) {
 }
 
 // Close the database connection
-$connection->close();
+
 ?>

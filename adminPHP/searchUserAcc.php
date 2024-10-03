@@ -50,7 +50,7 @@ if ($result->num_rows > 0) {
 
 // Close the statement and connection
 $stmt->close();
-$connection->close();
+
 ?>
 
 <!-- Optional: Add a link to go back to the admin panel -->

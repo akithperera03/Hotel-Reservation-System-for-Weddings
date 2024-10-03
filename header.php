@@ -7,7 +7,7 @@ session_start(); // Start the session at the beginning of the file
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
-    <link rel="stylesheet" href="styles/contact.css">
+    <link rel="stylesheet" href="styles/style.css">
     <script src="js/aboutus.js" defer></script>
     <link rel="icon" href="images/icon/icon.ico" type="image/x-icon">
 </head>

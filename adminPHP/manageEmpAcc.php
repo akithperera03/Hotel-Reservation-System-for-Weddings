@@ -19,8 +19,8 @@ if ($result->num_rows > 0) {
         
         // Show the Delete button only if it's not the first row
         if ($rowCount > 1) {
-            echo "<a href='updateEmp_details.php?employee_id=" . $row['id'] . "' class='action-button'>Update</a>";
-            echo "<a href='adminPHP/deleteEmpAcc.php?delete_id=" . $row['id'] . "' class='action-button' onclick=\"return confirm('Are you sure you want to delete this user?');\">Delete</a>";
+             echo "<a href='adminPHP/updateEmp.php?employee_id=" . $row['id'] . "' class='action-button'>Update</a>";
+             echo "<a href='adminPHP/deleteEmpAcc.php?delete_id=" . $row['id'] . "' class='action-button' onclick=\"return confirm('Are you sure you want to delete this user?');\">Delete</a>";
         }
         else{
             echo "Can not remove or edit SUPER Users ⚠️";

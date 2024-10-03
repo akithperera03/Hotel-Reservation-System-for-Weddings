@@ -145,6 +145,19 @@ function refreshPage() {
         <?php include './adminPHP/paymentDetails.php'; ?> 
     </table>
 </div>
+<div class="messages-section">
+    <h3>Messages</h3>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>Action</th>
+        </tr>
+        <?php include './adminPHP/messages.php'; ?> 
+    </table>
+</div>
 </main>
 </body>
 <?php include 'footer.php'; ?>
