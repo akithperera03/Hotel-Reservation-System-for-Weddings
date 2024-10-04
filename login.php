@@ -67,7 +67,7 @@
                         print_r($_SESSION); // Check all session variables
                         echo '</pre>';
 
-                        header("Location: bookingoverview.php"); // Redirect to a dashboard or home page
+                        header("Location: userAccount.php"); // Redirect to a dashboard or home page
                         exit();
                     } else {
                         echo "<p style='color: red;'>Incorrect password. Please try again.</p>";
