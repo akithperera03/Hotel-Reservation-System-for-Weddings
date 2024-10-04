@@ -40,12 +40,13 @@
     
             <div class="contact-form">
                 <h2>Contact Us</h2>
-                <form>
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Message" required></textarea>
-                    <button type="submit">SEND</button>
-                </form>
+                <form action="contact.php" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" placeholder="Message" required></textarea>
+    <button type="submit">SEND</button>
+</form>
+
             </div>
         </div>
     </main>

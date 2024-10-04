@@ -85,19 +85,20 @@ function refreshPage() {
         <h2>Add New User</h2>
         <form action="./adminPHP/addUser.php" method="POST">
             <div class="form-group">
-                <label for="empID">User ID:</label>
-                <input type="text" id="empID" name="empID" required>
+                <label for="userName">User Name:</label>
+                <input type="text" id="userID" name="userName" required>
             </div>
             <div class="form-group">
-                <label for="empPSW">Password:</label>
-                <input type="password" id="empPSW" name="empPSW" required>
+                <label for="password">Email</label>
+                <input type="text" id="userEmail" name="userEmail" required>
             </div>
             <div class="form-group">
-                <label for="role">Role:</label>
-                <select id="role" name="role" required>
-                    <option value="admin">Admin</option>
-                    <option value="manager">Manager</option>
-                </select>
+                <label for="userFName">Full Name</label>
+                <input type="text" id="userFName" name="userFName" required>
+            </div>
+            <div class="form-group">
+                <label for="userPSW">Password:</label>
+                <input type="password" id="userPSW" name="userPSW" required>
             </div>
             <button type="submit" class="submit-button">Add Employee</button>
         </form>

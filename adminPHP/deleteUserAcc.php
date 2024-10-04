@@ -5,7 +5,7 @@ if (isset($_GET['delete_id'])) {
     $deleteID = $_GET['delete_id'];
 
     // Prepare the SQL statement to prevent SQL injection
-    $stmt = $connection->prepare("DELETE FROM employees WHERE id = ?");
+    $stmt = $connection->prepare("DELETE FROM users WHERE userID = ?");
     $stmt->bind_param("i", $deleteID); // Assuming id is an integer
 
     // Execute the statement
@@ -23,5 +23,5 @@ if (isset($_GET['delete_id'])) {
 }
 
 // Close the database connection
-$connection->close();
+
 ?>

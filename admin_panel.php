@@ -87,14 +87,23 @@ function refreshPage() {
         </div>
     </div>
 </div>
+
 <div class="user-management">
     <h3>Manage User Accounts</h3>
-    <a href="addUser_Form.php" class="action-button">Add New User</a>
+    <div class="actions">
+    <form method="GET" action="./adminPHP/searchUserAcc.php" class ="in">
+    <input type="text" name="search" placeholder="Search by username or ID" required>
+    <button type="submit" class="action-button">Search</button>
+</form>
+    <a href="addUser_Form.php" class="action-button" id ="newemp">Add New User</a>
+    </div>
     <table>
         <tr>
-            <th>Username</th>
-            <th>UserID</th>
-            <th>Email</th>
+            <th>User ID</th>
+            <th>User Name</th>
+            <th>User Full Name</th>
+            <th>User Email</th>
+            <th>User Password</th>
             <th>Action</th>
         </tr>
         <?php include './adminPHP/manageUserAcc.php';?>
@@ -119,12 +128,48 @@ function refreshPage() {
 <div class="payments-section">
     <h3>Payments</h3>
     <table>
-            <tr>
-                <th>Username</th>
-                <th>UserID</th>
-                <th>Transaction_ID</th>
-                <th>Date and Time</th>
-            </tr>
+        <tr>
+        <th>Payment ID</th>
+            <th>Order ID</th>
+            <th>User ID</th>
+            <th>Card Type</th>
+            <th>Card Number</th>
+            <th>Expiry Date</th>
+            <th>Security Code</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Country</th>
+            <th>Cost</th>
+            <th>Date</th>
+        </tr>
+        <?php include './adminPHP/paymentDetails.php'; ?> 
+    </table>
+</div>
+<div class="payments-section">
+    <h3>Guests List</h3>
+    <table>
+        
+        <?php include './adminPHP/guestlist.php'; ?> 
+    </table>
+</div>
+<div class="reservations-section">
+    <h3>Wedding Reservations</h3>
+    <table>
+        <?php include './adminPHP/reservationDetails.php'; ?> 
+    </table>
+</div>
+<div class="messages-section">
+    <h3>Messages</h3>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>Action</th>
+        </tr>
+        <?php include './adminPHP/messages.php'; ?> 
     </table>
 </div>
 </main>

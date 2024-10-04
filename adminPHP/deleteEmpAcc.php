@@ -4,24 +4,24 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/con
 if (isset($_GET['delete_id'])) {
     $deleteID = $_GET['delete_id'];
 
-    // Prepare the SQL statement to prevent SQL injection
+    
     $stmt = $connection->prepare("DELETE FROM employees WHERE id = ?");
-    $stmt->bind_param("i", $deleteID); // Assuming id is an integer
+    $stmt->bind_param("i", $deleteID); 
 
-    // Execute the statement
+   
     if ($stmt->execute()) {
         echo "<script>alert('User Account Deleted');</script>";
-        echo "<script>window.location.href = '../admin_panel.php';</script>"; // Redirect to the admin panel or user management page
+        echo "<script>window.location.href = '../admin_panel.php';</script>"; 
     } else {
         echo "Account deletion failed: " . $stmt->error;
     }
 
-    // Close the statement
+
     $stmt->close();
 } else {
     echo "Delete ID not found";
 }
 
-// Close the database connection
-$connection->close();
+
+
 ?>

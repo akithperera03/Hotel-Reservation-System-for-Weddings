@@ -1,5 +1,6 @@
 <?php include 'header.php'; ?>
 <title>About Us</title>
+<link rel="stylesheet" href="styles/aboutus.css">
     <main>
         <section class="hero">
             <div class="container">
