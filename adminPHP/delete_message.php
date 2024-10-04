@@ -1,22 +1,20 @@
 <?php
-session_start(); // Ensure session is started
+session_start(); 
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
 
-// Check if the user is logged in as admin
-// Check if message_id is set
 if (isset($_POST['message_id'])) {
-    $message_id = intval($_POST['message_id']); // Get message ID and cast to integer to prevent SQL injection
+    $message_id = intval($_POST['message_id']); 
 
-    // Delete the message from the database
+
     $sql = "DELETE FROM contact WHERE id = ?";
     $stmt = $connection->prepare($sql);
-    $stmt->bind_param("i", $message_id); // Bind the message ID to the query
+    $stmt->bind_param("i", $message_id); 
     if ($stmt->execute()) {
-        // Redirect back to messages page with success message
+       
         header("Location: ../admin_panel.php?message=Message deleted successfully");
     } else {
-        // Handle error
+       
         header("Location: ../admin_panel.php?message=Error deleting message");
     }
     $stmt->close();
@@ -24,6 +22,6 @@ if (isset($_POST['message_id'])) {
     header("Location: ../admin_panel.php?message=Invalid request");
 }
 
-// Close the database connection
+
 $connection->close();
 ?>

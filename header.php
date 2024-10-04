@@ -1,5 +1,8 @@
 <?php
-session_start(); // Start the session at the beginning of the file
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+ // Start the session at the beginning of the file
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +35,7 @@ session_start(); // Start the session at the beginning of the file
             </a>
             <div class="user">
                 <?php if (isset($_SESSION['user_email'])): ?>
-                   <a href="index.php" class="dash"><span>Hello, <?php echo htmlspecialchars($_SESSION['user_name']); ?>!<br>Dashboard</span></a> 
+                   <a href="bookingoverview.php" class="dash"><span>Hello, <?php echo htmlspecialchars($_SESSION['user_name']); ?>!<br>Dashboard</span></a> 
                     <a href="logout.php" class="logout">Logout</a>
                 <?php else: ?>
                     <span>Hello!</span>

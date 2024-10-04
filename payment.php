@@ -39,6 +39,9 @@
                 <label for="country">Country:</label>
                 <input type="text" name="country" id="country" required>
 
+                <label for="amount">Amount:</label>
+                <input type="text" name="amount" id="country" required>
+
                 <input type="checkbox" name="agree" required> I agree to the terms.
 
                 <button type="submit">Pay Now</button>

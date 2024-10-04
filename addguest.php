@@ -1,85 +1,6 @@
-<?php
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "myreservation";
-
-// Establish a database connection
-$connection = new mysqli($servername, $username, $password, $database);
-
-// Check connection
-if ($connection->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
-}
-
-$order_id_guest = "";
-$guest_name = "";
-$nic_number = "";
-
-$errorMessage = "";
-$successMessage = "";
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $order_id_guest = $_POST["order_id_guest"];
-    $guest_name = $_POST["guest_name"];
-    $nic_number = $_POST["nic_number"];
-
-    do {
-        // Validate inputs
-        if (empty($order_id_guest) || empty($guest_name) || empty($nic_number)) {
-            $errorMessage = "All the fields are required";
-            break;
-        }
-
-        // Fetch the current maximum value of `No`
-        $result = $connection->query("SELECT MAX(No) as max_no FROM GuestList");
-
-        // Check if the query was successful
-        if (!$result) {
-            $errorMessage = "Failed to fetch the maximum `No`: " . $connection->error;
-            break;
-        }
-
-        // Fetch the next `No` value
-        $row = $result->fetch_assoc();
-        $nextNo = $row['max_no'] + 1; // Increment the max `No` by 1
-
-        // Check if `nextNo` was correctly calculated
-        if (!$nextNo) {
-            $nextNo = 1; // Default to 1 if no rows exist
-        }
-
-        // Insert the new record with incremented `No`
-        $sql = "INSERT INTO GuestList (No, Name, NICNumber, OrderID) 
-                VALUES ($nextNo, '$guest_name', '$nic_number', '$order_id_guest')";
-
-        // Execute the insert query
-        $result = $connection->query($sql);
-
-        // Check if the insert was successful
-        if (!$result) {
-            $errorMessage = "Failed to insert new guest: " . $connection->error;
-            break;
-        }
-
-        // Reset form fields after a successful submission
-        $order_id_guest = "";
-        $guest_name = "";
-        $nic_number = "";
-
-        $successMessage = "Guest added successfully";
-
-        // Redirect to booking overview page
-        header("Location: /myreservation/bookingoverview.php");
-        exit;
-
-    } while (false);
-}
-?>
-    <?php include 'header.php'; ?>
-    <title>Aurora Bliss</title>
-    <link rel="stylesheet" href="styles/addguest.css">
+<?php include 'header.php'; ?>
+<title>Aurora Bliss</title>
+<link rel="stylesheet" href="styles/addguest.css">
 <body>
     <div class="guest">
         <div class="image-container">
@@ -89,17 +10,85 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <h2>Add Guest List</h2>
             
             <?php
+            // Start session if not already started
+            if (session_status() === PHP_SESSION_NONE) {
+                session_start();
+            }
+
+            // Check if user is logged in and user_id is set
+            if (!isset($_SESSION['user_id'])) {
+                // Redirect to login page if not logged in
+                header("Location: /HotelReservationSystemforWeddings/login.php");
+                exit();
+            }
+
+            // Include database configuration
+            require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
+
+            // Initialize messages
+            $errorMessage = $successMessage = "";
+
+            // Check if form is submitted
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                // Capture form data
+                $orderID = $_POST['order-id-guest'];
+                $guestName = $_POST['guest-name'];
+                $nicNumber = $_POST['nic-number'];
+
+                // Get active user's ID from session
+                $userId = $_SESSION['user_id'];
+
+                // Check if orderID exists in wedding_reservations
+                $orderCheckQuery = "SELECT * FROM wedding_reservations WHERE orderID = ?";
+                $stmtOrderCheck = $connection->prepare($orderCheckQuery);
+                $stmtOrderCheck->bind_param("i", $orderID);
+                $stmtOrderCheck->execute();
+                $orderResult = $stmtOrderCheck->get_result();
+
+                if ($orderResult->num_rows > 0) {
+                    // Prepare SQL to insert guest details
+                    $stmt = $connection->prepare("INSERT INTO guests (userID, orderID, guest_name, nic_number) VALUES (?, ?, ?, ?)");
+                    $stmt->bind_param("iiss", $userId, $orderID, $guestName, $nicNumber);
+
+                    // Execute the query
+                    if ($stmt->execute()) {
+                        $successMessage = "Guest added successfully.";
+                    } else {
+                        $errorMessage = "Error: " . $stmt->error;
+                    }
+
+                    // Close the statement
+                    $stmt->close();
+                } else {
+                    $errorMessage = "Invalid order ID.";
+                }
+
+                // Close order check statement
+                $stmtOrderCheck->close();
+                // Close the connection
+                $connection->close();
+            }
+
+            // Display any error or success messages
             if (!empty($errorMessage)) {
                 echo "
                 <div class='alert alert-warning alert-dismissible fade show' role='alert'>
                     <strong>$errorMessage</strong>
                     <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                </div>
-                ";
+                </div>";
+            }
+
+            if (!empty($successMessage)) {
+                echo "
+                <div class='alert alert-success alert-dismissible fade show' role='alert'>
+                    <strong>$successMessage</strong>
+                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                </div>";
             }
             ?>
 
-            <form>
+            <!-- Guest Form -->
+            <form method="POST" action="addguest.php">
                 <label for="order-id-guest">Order ID:</label>
                 <input type="text" id="order-id-guest" name="order-id-guest" required placeholder="Enter order ID">
 
@@ -107,18 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input type="text" id="guest-name" name="guest-name" required placeholder="Enter guest name">
 
                 <label for="nic-number">NIC Number:</label>
-                <input type="text" id="nic-number" name="nic-number" required placeholder="Enter nic number">
-
-                <?php
-                if (!empty($successMessage)) {
-                    echo "
-                    <div class='alert alert-success alert-dismissible fade show' role='alert'>
-                        <strong>$successMessage</strong>
-                        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                    </div>
-                    ";
-                }
-                ?>
+                <input type="text" id="nic-number" name="nic-number" required placeholder="Enter NIC number">
 
                 <button type="submit">Add guest</button>
             </form>

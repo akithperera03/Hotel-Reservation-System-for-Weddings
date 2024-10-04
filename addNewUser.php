@@ -6,11 +6,11 @@ $userusername=$_POST ["userName"];
 $useremail=$_POST ["userEmail"];
 $userpassword=$_POST ["userPSW"];
 
-$sql="INSERT INTO users VALUES('','$userfname','$userusername','$useremail','$userpassword')";
+$sql="INSERT INTO users VALUES('','$userusername','$useremail','$userpassword','$userfname')";
 
 if($connection->query($sql))
 {
-    header("Location: userAccount.php");
+    header("Location: bookingoverview.php");
     exit(); 
 
 }

@@ -9,9 +9,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $sql = "INSERT INTO users (userName,userEmail,userFName,userPSW) VALUES (?, ?, ?,?)";
     
-    // Prepare the SQL statement to prevent SQL injection
+    
     if ($stmt = $connection->prepare($sql)) {
-        $stmt->bind_param( 'ssss',$userName,$userEmail,$userFName,$userPSW); // Assuming empID and role are strings
+        $stmt->bind_param( 'ssss',$userName,$userEmail,$userFName,$userPSW); 
         
         if ($stmt->execute()) {
             echo "<script>alert('User added successfully!');</script>";

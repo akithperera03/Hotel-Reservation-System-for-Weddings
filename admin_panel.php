@@ -129,6 +129,7 @@ function refreshPage() {
     <h3>Payments</h3>
     <table>
         <tr>
+        <th>Payment ID</th>
             <th>Order ID</th>
             <th>User ID</th>
             <th>Card Type</th>
@@ -143,6 +144,19 @@ function refreshPage() {
             <th>Date</th>
         </tr>
         <?php include './adminPHP/paymentDetails.php'; ?> 
+    </table>
+</div>
+<div class="payments-section">
+    <h3>Guests List</h3>
+    <table>
+        
+        <?php include './adminPHP/guestlist.php'; ?> 
+    </table>
+</div>
+<div class="reservations-section">
+    <h3>Wedding Reservations</h3>
+    <table>
+        <?php include './adminPHP/reservationDetails.php'; ?> 
     </table>
 </div>
 <div class="messages-section">

@@ -8,9 +8,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $sql = "INSERT INTO employees (empID, empPSW, role) VALUES (?, ?, ?)";
     
-    // Prepare the SQL statement to prevent SQL injection
+
     if ($stmt = $connection->prepare($sql)) {
-        $stmt->bind_param("sss", $empID, $empPSW, $role); // Assuming empID and role are strings
+        $stmt->bind_param("sss", $empID, $empPSW, $role); 
         
         if ($stmt->execute()) {
             echo "<script>alert('Employee added successfully!');</script>";

@@ -4,7 +4,7 @@ if (!$connection || !$connection->ping()) {
 }
 
 // SQL query to fetch payment details
-$sql = "SELECT order_id, user_id, card_type, card_number, expiry_date, 
+$sql = "SELECT payment_id,order_id, user_id, card_type, card_number, expiry_date, 
         security_code, address, city, state, country, cost, created_at 
         FROM payments";
 $result = $connection->query($sql);
@@ -14,6 +14,7 @@ if ($result->num_rows > 0) {
     // Output data for each row
     while ($row = $result->fetch_assoc()) {
         echo "<tr>
+        <td>{$row['payment_id']}</td>
                 <td>{$row['order_id']}</td>
                 <td>{$row['user_id']}</td>
                 <td>{$row['card_type']}</td>

@@ -4,8 +4,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Prepare and bind
-    $stmt = $connection->prepare("INSERT INTO payments (order_id, user_id, card_type, card_number, expiry_date, security_code, address, city, state, country, cost) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("iissssssssi", $order_id, $user_id, $cardType, $cardNumber, $expiryDate, $securityCode, $address, $city, $state, $country, $cost);
+    $stmt = $connection->prepare("INSERT INTO payments (order_id,Amount, user_id, card_type, card_number, expiry_date, security_code, address, city, state, country) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("iiissssssss", $order_id, $amount,$user_id, $cardType, $cardNumber, $expiryDate, $securityCode, $address, $city, $state, $country);
 
     // Set parameters and execute
     $order_id = $_POST['order_id'];
@@ -18,11 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $city = $_POST['city'];
     $state = $_POST['state'];
     $country = $_POST['country'];
-    $cost = $_POST['cost']; // You can calculate this based on your business logic
+    $amount = $_POST['amount'];
+     // You can calculate this based on your business logic
 
     if ($stmt->execute()) {
         echo "<script>alert('Payment Successfull');</script>";
-        header("Location: userAccount.php");
+        header("Location: bookingoverview.php");
     } else {
         echo "<script>alert('Payment Unsuccessfull');</script>";
     }

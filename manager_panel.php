@@ -145,6 +145,13 @@ function refreshPage() {
         <?php include './adminPHP/paymentDetails.php'; ?> 
     </table>
 </div>
+<div class="payments-section">
+    <h3>Guests List</h3>
+    <table>
+        
+        <?php include './adminPHP/guestlist.php'; ?> 
+    </table>
+</div>
 
 </main>
 </body>
