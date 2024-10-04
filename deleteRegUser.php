@@ -14,13 +14,13 @@ if (!isset($_SESSION['user_id'])) {
 // Include the database configuration file
 require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
 
-// Retrieve the logged-in user's ID from the session
-$username = $_SESSION['user_id'];
+// Retrieve the logged-in user_id from the session
+$user_id = $_SESSION['user_id'];
 
 // Prepare the SQL query to fetch user details
 $sql = "SELECT * FROM users WHERE userID = ?";
 $stmt = $connection->prepare($sql);
-$stmt->bind_param("i", $username); // Changed to bind integer instead of string
+$stmt->bind_param("i", $user_id); // Assuming userID is an integer
 $stmt->execute();
 $result = $stmt->get_result();
 
@@ -28,9 +28,8 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     $user = $result->fetch_assoc();
     $userid = $user['userID'];
-    $email = $user['userEmail'];  // Changed to match your database field for email
-    $fname = $user['userFName'];  // You were using $fname but it was not defined earlier
-    $password = $user['userPSW'];
+    $fname = $user['userFName'];
+    $email = $user['userEmail'];
 } else {
     echo "No user found!";
     exit();
@@ -38,30 +37,28 @@ if ($result->num_rows > 0) {
 
 // Close the statement
 $stmt->close();
-
+$connection->close();
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>User Account</title>
-    <link rel="stylesheet" href="styles/userAcc.css">
+    <title>Delete Account</title>
+    <link rel="stylesheet" href="styles/deleteRegUser.css">
 </head>
 <body>
     <div class="account-container">
-        <h2>Welcome <br> <?php echo $fname; ?>!</h2>
-        <br>
-        <img src="images/userIcon.png" alt="User Icon">
+        <h2>Delete Your Account</h2>
+        <p><strong>Full Name:</strong> <?php echo $fname; ?></p>
         <p><strong>User ID:</strong> <?php echo $userid; ?></p>
-        <p><strong>Username:</strong> <?php echo $username; ?></p>
         <p><strong>Email:</strong> <?php echo $email; ?></p>
 
-        <div class="button-group">
-            <button class="update-btn" onclick="window.location.href='updateRegUser.php';">Update</button>
-            <button class="delete-btn" onclick="window.location.href='deleteRegUser.php';">Delete</button>
-        </div>
+        <form method="post" action="processDelete.php">
+            <p>Are you sure you want to delete your account? This action cannot be undone.</p>
+            <button type="submit" class="delete-btn">Delete Account</button>
+        </form>
 
-        <a href="logout.php" class="logout-btn">Logout</a>
+        <a href="userAccount.php">Cancel</a>
     </div>
 </body>
 </html>
