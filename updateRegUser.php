@@ -1,4 +1,4 @@
-
+<?php include 'header.php'; ?>
 <?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -48,6 +48,7 @@ $connection->close();
     <link rel="stylesheet" href="styles/updateRegUser.css"> 
 </head>
 <body>
+    <main>
     <div class="update-container">
         <h2>Update Your Details</h2>
         <form action="processUpdate.php" method="post">
@@ -69,4 +70,5 @@ $connection->close();
         </form>
         <a href="userAccount.php">Back to Account</a>
     </div>
-
+    </main>
+<?php include 'footer.php' ?>

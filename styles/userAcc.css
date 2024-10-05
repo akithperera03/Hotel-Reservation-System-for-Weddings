@@ -1,12 +1,11 @@
-body {
+main {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    display: flex;
+    background-color: #f2f2f2;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    margin: 0;
+    display:flex;
+    
 }
 
 .account-container {
@@ -20,27 +19,26 @@ body {
     text-align: center;
 }
 
-h2 {
+.account-container h2 {
     color: #333;
 }
 
-p {
+.account-container p {
     margin: 10px 0;
     color: #555;
 }
 
-strong {
+.account-container strong {
     color: #000;
 }
-
-.button-group {
+ .button-group {
     margin-top: 20px;
     display: flex;
     justify-content: center;
     gap: 20px; /*seperate two buttons*/
 }
 
-button {
+.account-container button {
     padding: 10px 15px;
     border: none;
     color: #fff;
@@ -62,7 +60,7 @@ button.delete-btn {
 
 
 
-a {
+.account-container a {
     display: inline-block;
     margin-top: 30px; /*add margi to seperate lnk from delete and update buttons */
     color: #0275d8;
@@ -70,6 +68,6 @@ a {
     font-weight: bold;
 }
 
-a:hover {
+.account-container a:hover {
     text-decoration: underline;
 }
