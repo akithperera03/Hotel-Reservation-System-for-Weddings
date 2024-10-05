@@ -57,7 +57,7 @@ $connection->close();
             Full Name:
             <input type="text" id="fname" name="fname" value="<?php echo $fname; ?>" required>
 
-            Username:
+            User ID:
             <input type="text" id="username" name="username" value="<?php echo $user_id; ?>" required readonly> 
 
             Email:
