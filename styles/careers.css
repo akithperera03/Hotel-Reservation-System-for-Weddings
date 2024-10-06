@@ -1,4 +1,4 @@
-/* Basic Reset */
+/*Akith Perera IT23551152*/
 * {
     margin: 0;
     padding: 0;
@@ -18,11 +18,11 @@ body {
     padding: 0 20px;
 }
 
-/* Header Styles */
 
-/* Simple blue button */
+
+
 a .booking-btn {
-    background-color: #007bff; /* Blue color */
+    background-color: #007bff; 
     color: white;
     padding: 10px 20px;
     font-size: 16px;
@@ -35,7 +35,7 @@ a .booking-btn {
 }
 
 a .booking-btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3; 
 }
 
 
@@ -58,7 +58,7 @@ a .booking-btn:hover {
     color: #fff;
 }
 
-/* Hero Section */
+
 .careers-hero {
     background-color: #222;
     color: white;
@@ -76,7 +76,7 @@ a .booking-btn:hover {
     margin-bottom: 30px;
 }
 
-/* Open Positions Section */
+
 .open-positions {
     background-color: #fff;
     padding: 40px 0;
@@ -136,7 +136,7 @@ a .booking-btn:hover {
     background-color: #00487a;
 }
 
-/* Why Work With Us Section */
+
 .why-work-with-us {
     background-color: #f4f4f4;
     padding: 40px 0;
@@ -180,7 +180,7 @@ a .booking-btn:hover {
     border-radius: 10px;
 }
 
-/* Employee Testimonials Section */
+
 .employee-testimonials {
     background-color: #fff;
     padding: 40px 0;

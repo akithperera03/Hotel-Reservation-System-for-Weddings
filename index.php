@@ -1,4 +1,6 @@
-<?php include 'header.php'; ?>
+<?php include 'header.php'; 
+//Akith Perera IT23551152
+?>
     <title>Aurora Bliss</title>
     <link rel="stylesheet" href="styles/index.css">
     <main>

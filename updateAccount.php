@@ -7,24 +7,24 @@
             <h2>Update Account Details</h2>
 
             <?php
-            // Start session if not already started
+            
             if (session_status() === PHP_SESSION_NONE) {
                 session_start();
             }
 
-            // Check if user is logged in and user_id is set
+           
             if (!isset($_SESSION['user_id'])) {
-                // Redirect to login page if not logged in
+                
                 header("Location: /HotelReservationSystemforWeddings/login.php");
                 exit();
             }
 
-            // Include database configuration
+           
             require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
 
             $errorMessage = $successMessage = "";
 
-            // Get current user data from the database
+            
             $userId = $_SESSION['user_id'];
             $stmt = $connection->prepare("SELECT userName, userEmail, userFName FROM users WHERE userID = ?");
             $stmt->bind_param("i", $userId);
@@ -33,15 +33,15 @@
             $stmt->fetch();
             $stmt->close();
 
-            // Check if form is submitted
+           
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                // Capture updated form data
+                
                 $newUserName = $_POST['user-name'];
                 $newUserEmail = $_POST['user-email'];
                 $newUserPassword = $_POST['user-password'];
                 $newUserFName = $_POST['user-fname'];
 
-                // Update user details in the database
+                
                 $stmt = $connection->prepare("UPDATE users SET userName = ?, userEmail = ?, userPSW = ?, userFName = ? WHERE userID = ?");
                 $stmt->bind_param("ssssi", $newUserName, $newUserEmail, $newUserPassword, $newUserFName, $userId);
 
@@ -51,13 +51,12 @@
                     $errorMessage = "Error: " . $stmt->error;
                 }
 
-                // Close the statement
+         
                 $stmt->close();
-                // Close the connection
                 $connection->close();
             }
 
-            // Display error or success messages
+          
             if (!empty($errorMessage)) {
                 echo "
                 <div class='alert alert-warning alert-dismissible fade show' role='alert'>
@@ -75,7 +74,7 @@
             }
             ?>
 
-            <!-- Update Account Form -->
+         
             <form method="POST" action="updateAccount.php">
                 <label for="user-name">User Name:</label>
                 <input type="text" id="user-name" name="user-name" value="<?php echo $userName; ?>" required>

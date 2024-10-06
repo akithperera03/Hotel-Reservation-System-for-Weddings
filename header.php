@@ -2,7 +2,7 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
- // Start the session at the beginning of the file
+ 
 ?>
 <!DOCTYPE html>
 <html lang="en">

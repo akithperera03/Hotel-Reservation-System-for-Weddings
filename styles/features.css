@@ -1,7 +1,7 @@
 .features {
     padding: 50px;
     text-align: center;
-    background-color: #f7f4f1; /* Light background for contrast */
+    background-color: #f7f4f1; 
     font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -17,7 +17,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(135deg, #fff5f0, #fbe3db); /* Soft gradient background */
+    background: linear-gradient(135deg, #fff5f0, #fbe3db); 
     padding: 30px;
     margin-bottom: 40px;
     border-radius: 10px;
@@ -26,39 +26,39 @@
 }
 
 .feature-item:hover {
-    transform: translateY(-10px); /* Lift effect */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Shadow on hover */
+    transform: translateY(-10px); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); 
 }
 
 .feature-item img {
-    width: 200px; /* Larger images for better visuals */
+    width: 200px; 
     height: 140px;
     border-radius: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .feature-item img:hover {
-    transform: scale(1.05); /* Zoom effect on hover */
+    transform: scale(1.05); 
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .feature-info {
     flex-grow: 1;
-    margin-left: 40px; /* More space between image and text */
+    margin-left: 40px; 
     text-align: left;
     font-size: 1.2em;
-    line-height: 1.7em; /* Increased line spacing for readability */
+    line-height: 1.7em; 
     color: #555;
 }
 
 .feature-info h3 {
     font-size: 2em;
-    color: #ff6347; /* Tomato color for headings */
+    color: #ff6347; 
     margin-bottom: 15px;
 }
 
 .booking-btn1 {
-    background: linear-gradient(135deg, #ff7f50, #ff4500); /* Gradient button */
+    background: linear-gradient(135deg, #ff7f50, #ff4500); 
     color: white;
     padding: 15px 35px;
     font-size: 1.2em;
@@ -69,11 +69,11 @@
     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     display: inline-block;
     text-decoration: none;
-    box-shadow: 0 5px 15px rgba(255, 127, 80, 0.4); /* Button shadow */
+    box-shadow: 0 5px 15px rgba(255, 127, 80, 0.4); 
 }
 
 .booking-btn1:hover {
-    background: linear-gradient(135deg, #ff6347, #ff2b00); /* Darker gradient on hover */
+    background: linear-gradient(135deg, #ff6347, #ff2b00); 
     transform: translateY(-5px); /* Lift on hover */
     box-shadow: 0 8px 20px rgba(255, 99, 71, 0.6);
 }
@@ -84,11 +84,11 @@
 }
 
 .booking-btn1:active {
-    background: linear-gradient(135deg, #ff4500, #e63900); /* Darker on click */
+    background: linear-gradient(135deg, #ff4500, #e63900); 
     transform: translateY(0);
 }
 
-/* Responsive Media Query */
+
 @media (max-width: 768px) {
     .feature-item {
         flex-direction: column;

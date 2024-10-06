@@ -1,43 +1,44 @@
 <?php include 'header.php'?>
 <?php
-// Start session if not already started
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Check if user is logged in and user_id is set
+
 if (!isset($_SESSION['user_id'])) {
-    // Redirect to login page if not logged in
+  
     header("Location: /HotelReservationSystemforWeddings/login.php");
     exit();
 }
 
-// Include the database configuration file
+
 require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
 
-// Retrieve the logged-in user's ID from the session
+
 $username = $_SESSION['user_id'];
 
-// Prepare the SQL query to fetch user details
+
 $sql = "SELECT * FROM users WHERE userID = ?";
 $stmt = $connection->prepare($sql);
-$stmt->bind_param("i", $username); // Changed to bind integer instead of string
+$stmt->bind_param("i", $username); 
 $stmt->execute();
 $result = $stmt->get_result();
 
-// Check if a user record was found
+
 if ($result->num_rows > 0) {
     $user = $result->fetch_assoc();
     $userid = $user['userID'];
-    $email = $user['userEmail'];  // Changed to match your database field for email
-    $fname = $user['userFName'];  // You were using $fname but it was not defined earlier
+    $email = $user['userEmail'];  
+    $fname = $user['userFName'];  
     $password = $user['userPSW'];
+    $username=$user['userName'];
 } else {
     echo "No user found!";
     exit();
 }
 
-// Close the statement
+
 $stmt->close();
 
 ?>

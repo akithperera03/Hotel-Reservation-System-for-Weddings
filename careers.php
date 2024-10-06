@@ -1,9 +1,11 @@
-<?php include 'header.php'; ?>
+<?php include 'header.php'; 
+//Akith Perera IT23551152
+?>
     <title>Careers - Aurora Bliss</title>
     <link rel="stylesheet" href="styles/careers.css">
     <script src="js/index.js" defer></script>
     <main>
-        <!-- Hero Section -->
+        
         <section class="careers-hero">
             <div class="container">
                 <div class="hero-content">
@@ -12,7 +14,7 @@
                 </div>
             </div>
         </section>
-        <!-- Open Positions Section -->
+      
         <section class="open-positions">
             <div class="container">
                 <h2>Current Openings</h2>
@@ -33,7 +35,7 @@
             </div>
         </section>
 
-        <!-- Why Work With Us Section -->
+        
         <section class="why-work-with-us">
             <div class="container">
                 <div class="content-image-wrapper">
@@ -46,7 +48,7 @@
             </div>
         </section>
 
-        <!-- Employee Testimonials Section -->
+ 
         <section class="employee-testimonials">
             <div class="container">
                 <h2>What Our Team Says</h2>

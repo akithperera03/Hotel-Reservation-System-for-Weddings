@@ -1,7 +1,10 @@
+/*Akith Perera IT23551152*/
 document.addEventListener("DOMContentLoaded", function() {
-    // Check if there is an error message from PHP
-    const errorMsg = "<?php echo addslashes($error_msg); ?>"; // Escape quotes
+    
+    const errorMsg = "<?php echo addslashes($error_msg); ?>"; 
     if (errorMsg) {
-        alert(errorMsg); // Show the error message in an alert box
+        alert(errorMsg); 
     }
 });
+
+

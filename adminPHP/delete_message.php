@@ -1,6 +1,6 @@
 <?php
 session_start(); 
-
+//Akith Perera IT23551152
 require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
 
 if (isset($_POST['message_id'])) {

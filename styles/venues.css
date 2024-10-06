@@ -1,4 +1,4 @@
-/* General Reset */
+/*Akith Perera IT23551152*/
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +17,7 @@ body {
     padding: 0 20px;
 }
 
-/* Video Section */
+
 .venue-video {
     position: relative;
     overflow: hidden;
@@ -59,7 +59,6 @@ body {
     background-color: #0056b3;
 }
 
-/* Venues Section */
 .venue-gallery {
     padding: 50px 0;
     background-color: #f4f4f4;
@@ -105,7 +104,7 @@ body {
     color: #333;
 }
 
-/* Modal Styles */
+
 .modal {
     display: none;
     position: fixed;

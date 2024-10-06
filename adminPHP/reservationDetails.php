@@ -1,14 +1,14 @@
 <?php
-// Include database configuration
+//Akith Perera IT23551152
 require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
 
-// SQL query to fetch all wedding reservations
-$sql = "SELECT * FROM wedding_reservations ORDER BY orderid DESC"; // Assuming 'reservation_id' is the primary key
+
+$sql = "SELECT * FROM wedding_reservations ORDER BY orderid DESC"; 
 $result = $connection->query($sql);
 
-// Check if there are any reservations
+
 if ($result->num_rows > 0) {
-    // Table header
+   
     echo "<tr>
             <th>Order ID</th>
             <th>User ID</th>
@@ -21,7 +21,7 @@ if ($result->num_rows > 0) {
             <th>Order Date</th>
         </tr>";
 
-    // Fetch and display each reservation record
+    
     while ($row = $result->fetch_assoc()) {
         echo "<tr>
                 <td>{$row['orderID']}</td>
@@ -40,6 +40,6 @@ if ($result->num_rows > 0) {
     echo "<tr><td colspan='8'>No reservations found.</td></tr>";
 }
 
-// Close the connection
+
 
 ?>

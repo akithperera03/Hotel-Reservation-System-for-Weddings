@@ -1,6 +1,6 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
-
+//Akith Perera IT23551152
 if (isset($_GET['delete_id'])) {
     $deleteID = $_GET['delete_id'];
 

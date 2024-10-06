@@ -11,7 +11,7 @@
             </div>
         </section>
         <section class="features">
-    <!-- Feature 1: Expansive Ballroom -->
+  
     <div class="feature-item">
         <img src="images/features/ballroom.jpg" alt="Ballroom with elegant setup">
         <div class="feature-info">
@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <!-- Feature 2: Luxury Accommodations -->
+   
     <div class="feature-item">
         <img src="images/features/room.jpg" alt="Luxury room with balcony view">
         <div class="feature-info">
@@ -35,7 +35,7 @@
         </div>
     </div>
 
-    <!-- Feature 3: Catering and Culinary Excellence -->
+   
     <div class="feature-item">
         <img src="images/features/buffet.jpg" alt="Buffet setup">
         <div class="feature-info">
@@ -46,7 +46,7 @@
         </div>
     </div>
 
-    <!-- Feature 4: Expert Event Planning -->
+
     <div class="feature-item">
         <img src="images/features/event.jpeg" alt="Event planning">
         <div class="feature-info">
@@ -57,7 +57,7 @@
         </div>
     </div>
 
-    <!-- Feature 5: Wellness Center and Luxury Spa -->
+
     <div class="feature-item">
         <img src="images/features/spa.jpeg" alt="Spa and wellness center">
         <div class="feature-info">
@@ -67,7 +67,7 @@
         </div>
     </div>
 
-    <!-- Feature 6: Ample and Valet Parking -->
+
     <div class="feature-item">
         <img src="images/features/carpark.jpg" alt="Parking lot">
         <div class="feature-info">
@@ -77,7 +77,7 @@
         </div>
     </div>
 
-    <!-- Feature 7: Scenic Surroundings -->
+ 
     <div class="feature-item">
         <img src="images/features/pool.jpg" alt="Pool with scenic surroundings">
         <div class="feature-info">

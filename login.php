@@ -37,37 +37,37 @@
 
             <?php
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                // Database connection
+           
                 require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
 
-                // Get email and password from the form
+               
                 $email = $_POST['email'];
                 $password = $_POST['password'];
 
-                // Prepare and bind
+             
                 $stmt = $connection->prepare("SELECT * FROM users WHERE userEmail = ?");
                 $stmt->bind_param("s", $email);
                 $stmt->execute();
                 $result = $stmt->get_result();
 
-                // Check if the user exists
+                
                 if ($result->num_rows > 0) {
                     $user = $result->fetch_assoc();
 
-                    // Verify the password directly (without hashing)
-                    if ($password === $user['userPSW']) { // Direct comparison
-                        // Start the session and set user details
+                 
+                    if ($password === $user['userPSW']) { 
+                   
                         session_start();
-                        $_SESSION['user_id'] = $user['userID']; // Assuming there's a 'userID' column
+                        $_SESSION['user_id'] = $user['userID']; 
                         $_SESSION['user_email'] = $user['userEmail'];
-                        $_SESSION['user_name'] = $user['userName']; // Make sure 'userName' is the correct column name
+                        $_SESSION['user_name'] = $user['userName']; 
                         
-                        // Debug output
+                        
                         echo '<pre>';
-                        print_r($_SESSION); // Check all session variables
+                        print_r($_SESSION); 
                         echo '</pre>';
 
-                        header("Location: userAccount.php"); // Redirect to a dashboard or home page
+                        header("Location: userAccount.php"); 
                         exit();
                     } else {
                         echo "<p style='color: red;'>Incorrect password. Please try again.</p>";
