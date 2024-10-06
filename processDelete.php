@@ -19,7 +19,7 @@ $user_id = $_SESSION['user_id'];
 
 // Check if the request method is POST (to confirm the form was submitted)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Prepare the SQL query to delete the user account
+
     $deleteSql = "DELETE FROM users WHERE userID = ?";
     $deleteStmt = $connection->prepare($deleteSql);
     $deleteStmt->bind_param("i", $user_id); // Assuming userID is an integer

@@ -1,3 +1,4 @@
+<?php include 'header.php'?>
 <?php
 // Start session if not already started
 if (session_status() === PHP_SESSION_NONE) {
@@ -48,6 +49,7 @@ $stmt->close();
     <link rel="stylesheet" href="styles/userAcc.css">
 </head>
 <body>
+    <main>
     <div class="account-container">
         <h2>Welcome <br> <?php echo $fname; ?>!</h2>
         <br>
@@ -63,5 +65,5 @@ $stmt->close();
 
         <a href="logout.php" class="logout-btn">Logout</a>
     </div>
-</body>
-</html>
+    </main>
+    <?php include 'footer.php'?>

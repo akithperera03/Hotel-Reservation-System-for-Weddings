@@ -5,7 +5,7 @@
 <main>
     <section class="privacy-policy">
         <h1>Privacy Policy</h1>
-        <p>Last Updated: [date]</p>
+        <p>Last Updated: 2021.10.05</p>
         <p>
             Aurora Bliss is committed to protecting guests' personal information. This privacy policy covers the site as well as Aurora Bliss' services and describes how we gather, utilize, and protect the information you give us.<br><br>
 
