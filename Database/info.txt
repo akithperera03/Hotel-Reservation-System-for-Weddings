@@ -1,0 +1,6 @@
+Default Admin Username - Administrator
+Default Admin Password - super
+
+Default Manager Username - Manager
+Default Manager Password - manager
+
