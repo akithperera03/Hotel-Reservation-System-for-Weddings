@@ -1,6 +1,5 @@
 <?php
-require '../vendor/autoload.php'; // Correctly reference the autoload.php file
-
+require '../vendor/autoload.php'; 
 use Google\Client;
 
 $client = new Client();
