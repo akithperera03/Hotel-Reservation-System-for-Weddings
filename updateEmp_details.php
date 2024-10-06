@@ -1,11 +1,12 @@
 <?php
+//Akith Perera IT23551152
 require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
 
-// Fetch employee data
+
 if (isset($_GET['employee_id'])) {
     $employee_id = $_GET['employee_id'];
 
-    // Prepare the SQL statement
+   
     $stmt = $connection->prepare("SELECT * FROM employees WHERE id = ?");
     $stmt->bind_param("i", $employee_id);
     $stmt->execute();
@@ -24,34 +25,34 @@ if (isset($_GET['employee_id'])) {
 }
 ?>
 <?php 
-session_start(); // Start the session
+session_start(); 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
 
-// Check if the user is logged in
+
 if (!isset($_SESSION['adminID'])) {
-    header("Location: ../admin.php"); // Redirect if not logged in
+    header("Location: ../admin.php"); 
     exit();
 }
 
-// Fetch admin details from the database using the session variable
+
 $adminID = $_SESSION['adminID'];
 $sql = "SELECT empID, id FROM employees WHERE id = ?";
 if ($stmt = $connection->prepare($sql)) {
-    $stmt->bind_param("i", $adminID); // Bind the admin ID
+    $stmt->bind_param("i", $adminID); 
     $stmt->execute();
     $result = $stmt->get_result();
 
-    // Check if the admin exists
+    
     if ($result->num_rows > 0) {
-        $admin = $result->fetch_assoc(); // Fetch admin details
+        $admin = $result->fetch_assoc(); 
     } else {
-        // Handle case where admin is not found (should not happen if logged in)
+        
         echo "Admin not found.";
         exit();
     }
     $stmt->close();
 }
-// Check server connection status
+
 $connection_status = ($connection->connect_error) ? "Server Disconnected" : "Server Connected";
 
 ?>
@@ -67,7 +68,7 @@ $connection_status = ($connection->connect_error) ? "Server Disconnected" : "Ser
     <script src="js/time.js" defer></script>
     <link rel="icon" href="images/icon/icon.ico" type="image/x-icon">
     <title>Admin</title>
-     <!-- Add your CSS link here -->
+    
 </head>
 <body>
 <header>

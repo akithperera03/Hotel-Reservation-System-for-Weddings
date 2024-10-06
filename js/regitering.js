@@ -1,3 +1,4 @@
+// Tharaka W.S IT23579580
 function enableButton()
 {
 	 var checkboxx = document.getElementById("acceptTerms");

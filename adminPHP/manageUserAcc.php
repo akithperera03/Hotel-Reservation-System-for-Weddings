@@ -1,3 +1,4 @@
+<!--Kalana Biyanwila IT23609280-->
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
 $sql = "SELECT * FROM users";

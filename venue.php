@@ -1,8 +1,10 @@
-<?php include 'header.php'; ?>
+<?php include 'header.php'; 
+//Akith Perera IT23551152
+?>
     <title>Venues</title>
     <link rel="stylesheet" href="styles/venues.css">
     <script src="js/venues.js" defer></script>
- <!-- Video Section -->
+
  <section class="venue-video">
         <video autoplay muted loop id="venueVideo">
             <source src="videos/Aurora_Bliss_intro.mp4" type="video/mp4">
@@ -10,11 +12,11 @@
         </video>
         <div class="overlay-text">
             <h1>Explore Our Stunning Venues</h1>
-            <button id="scrollButton">View Venues</button> <!-- Scroll Button -->
+            <button id="scrollButton">View Venues</button> 
         </div>
     </section>
 
-    <!-- Venues Section -->
+
     <section class="venue-gallery" id="venues">
         <div class="container">
             <h2>Our Venues</h2>
@@ -39,7 +41,7 @@
         </div>
     </section>
 
-    <!-- Modal for Image and Description -->
+  
     <div id="imageModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="modalImage">

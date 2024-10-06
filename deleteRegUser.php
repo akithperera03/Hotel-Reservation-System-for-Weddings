@@ -1,30 +1,29 @@
+<!--  Tharaka W.S IT23579580  -->
 <?php
-// Start session if not already started
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Check if user is logged in and user_id is set
+
 if (!isset($_SESSION['user_id'])) {
-    // Redirect to login page if not logged in
+    
     header("Location: /HotelReservationSystemforWeddings/login.php");
     exit();
 }
 
-// Include the database configuration file
+
 require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
 
-// Retrieve the logged-in user_id from the session
 $user_id = $_SESSION['user_id'];
 
-// Prepare the SQL query to fetch user details
 $sql = "SELECT * FROM users WHERE userID = ?";
 $stmt = $connection->prepare($sql);
-$stmt->bind_param("i", $user_id); // Assuming userID is an integer
+$stmt->bind_param("i", $user_id); 
 $stmt->execute();
 $result = $stmt->get_result();
 
-// Check if a user record was found
+
 if ($result->num_rows > 0) {
     $user = $result->fetch_assoc();
     $userid = $user['userID'];
@@ -35,9 +34,9 @@ if ($result->num_rows > 0) {
     exit();
 }
 
-// Close the statement
+
 $stmt->close();
-$connection->close();
+
 ?>
 
 <!DOCTYPE html>

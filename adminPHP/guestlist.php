@@ -1,21 +1,20 @@
 <?php
-
+//Akith Perera IT23551152
 require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
 
 
-$sql = "SELECT * FROM guests ORDER BY orderid DESC"; // Assuming 'reservation_id' is the primary key
+$sql = "SELECT * FROM guests ORDER BY orderid DESC"; 
 $result = $connection->query($sql);
 
-// Check if there are any reservations
 if ($result->num_rows > 0) {
-    // Table header
+    
     echo "<tr>
     <th>Guest Name</th>
     <th>NIC Number</th>
     <th>Order ID</th>
         </tr>";
 
-    // Fetch and display each reservation record
+ 
     while ($row = $result->fetch_assoc()) {
         echo "<tr>
                 <td>{$row['guest_name']}</td>

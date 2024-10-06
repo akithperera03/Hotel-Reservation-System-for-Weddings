@@ -1,7 +1,7 @@
-//create a functon to confirm the requset when clicked on booking request
+// Samarasinghe A.V.A.V. IT23585676
 function submitBookingRequest() {
     
-    //confirmation of booking request
+    
     alert("Booking request sent successfully");
 }
 

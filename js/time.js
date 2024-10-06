@@ -1,4 +1,4 @@
-
+//Akith Perera IT23551152
 function updateClock() {
     var now = new Date();
     var hours = now.getHours();
@@ -19,6 +19,6 @@ function updateClock() {
 // Update the clock every second
 setInterval(updateClock, 1000);
 
-// Call the function immediately to avoid delay
+// Call the function immediately
 updateClock();
 

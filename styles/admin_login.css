@@ -1,13 +1,12 @@
-/* General Styles */
-/* General Styles */
+/*Akith Perera IT23551152*/
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('your-image.jpg'); /* Replace with your image path */
-    background-size: cover; /* Ensures the image covers the entire background */
-    background-position: center; /* Centers the background image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-image: url('your-image.jpg'); 
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
 }
 
 main {
@@ -15,19 +14,18 @@ main {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    backdrop-filter: blur(5px); /* Optional: adds a blur effect to make content stand out */
+    backdrop-filter: blur(5px); 
 }
 
-/* Login Section */
+
 .login-section {
-    background-color: rgba(255, 255, 255, 0.9); /* Adds a slight transparency to the login box */
+    background-color: rgba(255, 255, 255, 0.9); 
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     width: 350px;
 }
 
-/* The rest of your CSS remains the same */
 
 .login-box h1 {
     font-size: 26px;
@@ -93,13 +91,13 @@ main {
     color: #666;
 }
 
-/* Responsive Design */
+
 @media screen and (max-width: 400px) {
     .login-section {
         width: 90%;
     }
 }
-/* Header Styles */
+
 header {
     background-color: #005f99;
     padding: 20px 0;
@@ -144,7 +142,7 @@ header nav ul li a:hover {
     color: #ffc107;
 }
 
-/* Footer Styles */
+
 footer {
     background-color:#005f99;
     color: white;
@@ -191,7 +189,7 @@ footer ul li a:hover {
     color: #ffc107;
 }
 
-/* Adjust layout for small screens */
+
 @media screen and (max-width: 600px) {
     header .container, footer .container {
         flex-direction: column;

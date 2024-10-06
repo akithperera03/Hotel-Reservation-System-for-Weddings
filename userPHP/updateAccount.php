@@ -4,7 +4,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/con
 $user_id = $_SESSION['user_id'];
 $errorMessage = $successMessage = "";
 
-// Fetch user data to pre-fill the form
+
 $query = "SELECT * FROM users WHERE userID = ?";
 $stmt = $connection->prepare($query);
 $stmt->bind_param("i", $user_id);

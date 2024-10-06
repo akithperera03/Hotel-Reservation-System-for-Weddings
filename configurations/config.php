@@ -1,14 +1,14 @@
 <?php
-// Database connection details
+//database connection 
 $servername = "localhost"; 
 $username = "root"; 
 $password = ""; 
 $database = "iwt"; 
 
-// Create a new MySQLi connection
+//create the connection 
 $connection = new mysqli($servername, $username, $password, $database);
 
-// Check if the connection was successful
+// if connection fails error message will display
 if ($connection->connect_error) {
     die("Connection failed: " . $connection->connect_error);
 } else {

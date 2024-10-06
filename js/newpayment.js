@@ -1,7 +1,8 @@
+// Samarasinghe A.V.A.V. IT23585676
 document.getElementById('paymentForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission untill all the validations are done
+    event.preventDefault(); 
 
-    // Validate the form
+    
     const cardType = document.getElementById('cardType').value;
     const cardNumber = document.getElementById('cardNumber').value;
     const expiryDate = document.getElementById('expiryDate').value;
@@ -24,7 +25,6 @@ document.getElementById('paymentForm').addEventListener('submit', function(event
         return;
     }
 
-    // Simulate form processing
     alert('Payment successful!\n\n' +
         'Card Type: ' + cardType + '\n' +
         'Card Number: ' + cardNumber + '\n' +
@@ -36,5 +36,5 @@ document.getElementById('paymentForm').addEventListener('submit', function(event
         'Country: ' + country + '\n' +
         'Amount: ' + amount);
     
-    // Submit form data if necessary to server here
+    
 });

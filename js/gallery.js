@@ -1,3 +1,4 @@
+// Tharaka W.S IT23579580
 function openModal(img) {
     const modal = document.getElementById("modal");
     const modalImg = document.getElementById("modal-img");

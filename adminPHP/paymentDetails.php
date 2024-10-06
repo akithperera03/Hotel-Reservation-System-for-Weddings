@@ -1,21 +1,22 @@
 <?php
+//Akith Perera IT23551152
 if (!$connection || !$connection->ping()) {
     require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
 }
 
-// SQL query to fetch payment details
-$sql = "SELECT payment_id,order_id, user_id, card_type, card_number, expiry_date, 
+
+$sql = "SELECT payment_id,orderID, user_id, card_type, card_number, expiry_date, 
         security_code, address, city, state, country, cost, created_at 
         FROM payments";
 $result = $connection->query($sql);
 
-// Check if there are results and output them
+
 if ($result->num_rows > 0) {
-    // Output data for each row
+    
     while ($row = $result->fetch_assoc()) {
         echo "<tr>
         <td>{$row['payment_id']}</td>
-                <td>{$row['order_id']}</td>
+                <td>{$row['orderID']}</td>
                 <td>{$row['user_id']}</td>
                 <td>{$row['card_type']}</td>
                 <td>{$row['card_number']}</td>
@@ -33,6 +34,5 @@ if ($result->num_rows > 0) {
     echo "<tr><td colspan='12'>No payment records found.</td></tr>";
 }
 
-// Close the connection
 
 ?>

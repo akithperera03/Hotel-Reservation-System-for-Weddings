@@ -1,10 +1,9 @@
-
+/*Akith Perera IT23551152*/
 h2, h3 {
     color: #2d3142;
     text-align: center;
 }
 
-/* About Section Styling */
 .about-section, .corporate-section, .milestones-section, .more-info-section {
     margin: 40px auto;
     max-width: 900px;
@@ -22,7 +21,7 @@ h2, h3 {
     color: #555;
 }
 
-/* Board Members Grid */
+
 .board-members {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -30,7 +29,7 @@ h2, h3 {
     margin-top: 30px;
 }
 
-/* Board Member Cards */
+
 .board-member {
     display: flex;
     flex-direction: column;
@@ -67,7 +66,7 @@ h2, h3 {
     text-align: center;
 }
 
-/* Milestones List */
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -80,7 +79,7 @@ ul li {
     color: #4a4e69;
 }
 
-/* Learn More Button */
+
 .learn-more-btn {
     padding: 12px 30px;
     background-color: #2d3142;
@@ -96,7 +95,7 @@ ul li {
     background-color: #4a4e69;
 }
 
-/* More Info Paragraph */
+
 #more-info {
     margin-top: 20px;
     font-size: 1.1em;

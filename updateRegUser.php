@@ -1,36 +1,37 @@
+<!--  Tharaka W.S IT23579580  -->
 <?php include 'header.php'; ?>
 <?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Check if user is logged in and user_id is set
+
 if (!isset($_SESSION['user_id'])) {
-    // Redirect to login page if not logged in
+   
     header("Location: /HotelReservationSystemforWeddings/login.php");
     exit();
 }
 
-// Include the database configuration file
+
 require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
 
-// Retrieve the logged-in user's ID from the session
+
 $user_id = $_SESSION['user_id'];
 
-// Prepare the SQL query to fetch user details
+
 $sql = "SELECT * FROM users WHERE userID = ?";
 $stmt = $connection->prepare($sql);
-$stmt->bind_param("i", $user_id); // User ID is likely an integer
+$stmt->bind_param("i", $user_id); 
 $stmt->execute();
 $result = $stmt->get_result();
 
-// Check if a user record was found
+
 if ($result->num_rows > 0) {
     $user = $result->fetch_assoc();
     $userid = $user['userID'];
-    $fname = $user['userFName'];  // Assuming 'userFName' as field for full name
-    $email = $user['userEmail'];  // Assuming 'userEmail' as field for email
-    $password = $user['userPSW']; // Assuming 'userPSW' as field for password
+    $fname = $user['userFName'];  
+    $email = $user['userEmail'];  
+    $password = $user['userPSW']; 
 } else {
     echo "No user found!";
     exit();

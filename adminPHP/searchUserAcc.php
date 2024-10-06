@@ -1,3 +1,4 @@
+<!--Akith Perera IT23551152-->
 <!DOCTYPE html> 
 <html lang="en">
 <head>
@@ -17,10 +18,10 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
 
-// Get the search term from the URL
+
 $searchTerm = isset($_GET['search']) ? $_GET['search'] : '';
 
-// Prepare the SQL statement to search for users
+
 $sql = "SELECT * FROM users WHERE userName LIKE ? OR userID LIKE ?";
 $stmt = $connection->prepare($sql);
 $likeTerm = "%" . $searchTerm . "%";
@@ -28,13 +29,12 @@ $stmt->bind_param("ss", $likeTerm, $likeTerm);
 $stmt->execute();
 $result = $stmt->get_result();
 
-// Check if results were found
+
 if ($result->num_rows > 0) {
     echo "<h1>Search Results for: " . htmlspecialchars($searchTerm) . "</h1>";
     echo "<table>";
     echo "<tr><th>User ID</th><th>Username</th><th>Password</th></tr>";
 
-    // Output data for each user found
     while($row = $result->fetch_assoc()) {
         echo "<tr>";
         echo "<td>" . htmlspecialchars($row["userID"]) . "</td>";
@@ -48,7 +48,7 @@ if ($result->num_rows > 0) {
     echo "<h1>No results found for: " . htmlspecialchars($searchTerm) . "</h1>";
 }
 
-// Close the statement and connection
+
 $stmt->close();
 
 ?>

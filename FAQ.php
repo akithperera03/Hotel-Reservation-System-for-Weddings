@@ -1,4 +1,7 @@
-<?php include 'header.php'; ?>
+<!--Kalana Biyanwila IT23609280-->
+<?php include 'header.php';
+
+ ?>
     <title>FAQ</title>
     <link rel="stylesheet" href="styles/faq.css">
     <script src="js/index.js" defer></script>

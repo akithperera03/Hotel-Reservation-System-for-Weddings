@@ -1,3 +1,4 @@
+<!-- /* Samarasinghe A.V.A.V. IT23585676 */ -->
 <?php include 'header.php'?>
     <title>Payment Form</title>
     <link rel="stylesheet" href="styles/payment.css">
@@ -9,7 +10,7 @@
             <form action="save_payment.php" method="POST">
                 <input type="hidden" name="order_id" value= <?php echo htmlspecialchars($_SESSION['user_id']); ?>> <!-- Replace with dynamic value -->
                 <input type="hidden" name="user_id" value="<?php echo htmlspecialchars($_SESSION['user_id']); ?>"> <!-- Use dynamic value -->
-                <input type="hidden" name="cost" value="88500"> <!-- Replace with dynamic value -->
+                <input type="hidden" name="cost" value="88500"> 
 
                 <label for="cardType">Card Type:</label>
                 <select name="cardType" id="cardType" required>

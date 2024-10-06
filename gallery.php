@@ -1,5 +1,6 @@
+<!--  Tharaka W.S IT23579580  -->
 <?php include 'header.php'; ?>
-    <link rel="stylesheet" href="styles/gallery.css"> <!-- Updated CSS file name -->
+    <link rel="stylesheet" href="styles/gallery.css"> 
     <script src="js/gallery.js"></script> 
 <body>
    

@@ -1,7 +1,8 @@
 <?php
+//Akith Perera IT23551152
 session_start();
-session_unset(); // Remove all session variables
-session_destroy(); // Destroy the session
-header("Location: index.php"); // Redirect to the home page
+session_unset(); 
+session_destroy(); 
+header("Location: index.php"); 
 exit();
 ?>
