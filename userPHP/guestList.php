@@ -1,3 +1,4 @@
+ <!-- De Silva H.S.S IT23562042  -->
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
 
@@ -31,7 +32,7 @@ $result = $stmt->get_result();
             <td><?php echo htmlspecialchars($guest['nic_number']); ?></td>
             <td><?php echo htmlspecialchars($guest['orderID']); ?></td>
             <td>
-                <a href="userPHP/updateguest.php?guest_id=<?php echo $guest['guestID']; ?>" class="button">
+                <a href="userPHP/updateguest.php?guest_id=<?php echo $guest['guestID']; ?>" class="updatebutton">
                    Update
                 </a>
                 <a href="userPHP/deleteguest.php?guest_id=<?php echo $guest['guestID']; ?>" class="button" 

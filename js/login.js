@@ -1,4 +1,4 @@
-
+//De Silva H.S.S IT23562042
     const togglePassword = document.querySelector('#togglePassword');
     const password = document.querySelector('#password');
 

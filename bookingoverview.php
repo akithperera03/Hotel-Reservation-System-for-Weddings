@@ -1,3 +1,4 @@
+ <!-- De Silva H.S.S IT23562042  -->
 <?php
 session_start();
 
@@ -11,11 +12,11 @@ include 'header.php';
 
 <title>User Dashboard</title>
 <link rel="stylesheet" href="styles/bookingoverview.css">
+<script src="js/bookingoverview.js" defer></script>
 
 <body>
     <div class="dashboard">
-        <h1>Welcome to Your Dashboard, <?php echo $_SESSION['user_name']; ?></h1>
-        
+        <h1>Welcome to Your Dashboard, <?php echo $_SESSION['user_name']; ?> <span id ="dateTime"></span></h1>
         <div class="navbar">
             <a href="updateAccount.php">Update Account</a>
             <a href="addguest.php">Add Guest</a>

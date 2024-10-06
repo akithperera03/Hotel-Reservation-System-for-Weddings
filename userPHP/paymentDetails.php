@@ -49,7 +49,7 @@ $result = $stmt->get_result();
             <td><?php echo htmlspecialchars($payment['card_number']); ?></td>
             <td><?php echo htmlspecialchars($payment['expiry_date']); ?></td>
             <td>
-                <a href="userPHP/updatePayment.php?payment_id=<?php echo htmlspecialchars($payment['payment_id']); ?>" class="button">Update</a>
+                <a href="userPHP/updatePayment.php?payment_id=<?php echo htmlspecialchars($payment['payment_id']); ?>" class="updatebutton">Update</a>
                 <a href="userPHP/deletePayment.php?payment_id=<?php echo htmlspecialchars($payment['payment_id']); ?>" class="button" 
                    onclick="return confirm('Are you sure you want to delete this payment?');">Delete</a>
             </td>

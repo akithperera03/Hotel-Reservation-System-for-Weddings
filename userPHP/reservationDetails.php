@@ -1,3 +1,4 @@
+ <!-- De Silva H.S.S IT23562042  -->
 <?php
 $user_id = $_SESSION['user_id'];
 $query = "SELECT * FROM wedding_reservations WHERE userid = ?";

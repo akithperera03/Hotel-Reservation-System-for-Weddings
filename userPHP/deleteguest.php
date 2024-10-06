@@ -1,3 +1,4 @@
+ <!-- De Silva H.S.S IT23562042  -->
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
 
