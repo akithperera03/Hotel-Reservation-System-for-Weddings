@@ -1,3 +1,4 @@
+// Tharaka W.S IT23579580
 function checkPassword()
 {
 	var passwordd = document.getElementById("newpwd").value;

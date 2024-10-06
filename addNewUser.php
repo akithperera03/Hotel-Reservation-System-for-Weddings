@@ -1,3 +1,4 @@
+<!--  Tharaka W.S IT23579580  -->
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
 

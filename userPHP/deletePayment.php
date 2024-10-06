@@ -1,3 +1,4 @@
+<!-- /* Samarasinghe A.V.A.V. IT23585676 */ -->
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
 

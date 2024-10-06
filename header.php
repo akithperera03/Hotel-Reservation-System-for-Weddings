@@ -1,3 +1,4 @@
+<!-- /*Akith Perera IT23551152*/ -->
 <?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();

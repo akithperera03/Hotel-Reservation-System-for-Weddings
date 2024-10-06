@@ -1,3 +1,4 @@
+<!-- /*Akith Perera IT23551152*/ -->
 <?php include 'header.php'; ?>
 <title>Update Account</title>
 <link rel="stylesheet" href="styles/updateAcc.css">

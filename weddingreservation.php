@@ -1,24 +1,24 @@
  <!-- De Silva H.S.S IT23562042  -->
 <?php
  include 'header.php'; 
-// Start session if not already started
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Check if user is logged in and userID is set
+
 if (!isset($_SESSION['user_id'])) {
-    // Redirect to login page if not logged in
+    
     header("Location: /HotelReservationSystemforWeddings/login.php");
     exit();
 }
 
-// Include database configuration
+
 require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/configurations/config.php';
 
-// Check if the form is submitted
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Capture form data
+  
     $name = $_POST['name'];
     $email = $_POST['email'];
     $contactNo = $_POST['contact-no'];
@@ -26,14 +26,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $weddingDate = $_POST['wedding-date'];
     $guests = $_POST['guests'];
     
-    // Get active user's ID from the session
+   
     $userId = $_SESSION['user_id'];
 
-    // Prepare SQL statement to insert the reservation
+ 
     $stmt = $connection->prepare("INSERT INTO wedding_reservations (userID, name, email, contact_no, venue, wedding_date, guests) VALUES (?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("isssssi", $userId, $name, $email, $contactNo, $venue, $weddingDate, $guests);
     
-    // Execute the statement
+   
     if ($stmt->execute()) {
         echo "<script>alert('Reservation submitted successfully');</script>";
         echo "<script>window.location.href = './payment.php';</script>";
@@ -41,9 +41,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: " . $stmt->error;
     }
     
-    // Close the statement and connection
+    
     $stmt->close();
-    $connection->close();
 }
 ?>
 

@@ -1,3 +1,4 @@
+<!-- /* Samarasinghe A.V.A.V. IT23585676 */ -->
 <?php include 'header.php'; ?>
 <title>Privacy Policy</title>
 <link rel="stylesheet" href="styles/privacy.css">

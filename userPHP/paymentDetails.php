@@ -1,10 +1,10 @@
 <?php
-// Start the session if it hasn't been started
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Ensure user_id is set in the session
+
 if (!isset($_SESSION['user_id'])) {
     echo "User not logged in!";
     exit();
@@ -14,7 +14,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/HotelReservationSystemforWeddings/con
 
 $user_id = $_SESSION['user_id'];
 
-// Check if the database connection is successful
+
 if (!$connection) {
     die("Connection failed: " . mysqli_connect_error());
 }
@@ -22,7 +22,7 @@ if (!$connection) {
 $query = "SELECT * FROM payments WHERE user_id = ?";
 $stmt = $connection->prepare($query);
 
-// Check if the statement was prepared successfully
+
 if ($stmt === false) {
     die("Error preparing the query: " . $connection->error);
 }
@@ -58,7 +58,7 @@ $result = $stmt->get_result();
 </table>
 
 <?php
-// Close the statement and connection
+
 $stmt->close();
 
 ?>
